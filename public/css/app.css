@@ -1,3 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
 .test {
   display: -webkit-box;
   display: -moz-box;
@@ -6,5 +15,5 @@
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 40px;
+  margin: 20px;
 }
