@@ -1,7 +1,7 @@
 <template lang="jade">
 	
 .Component
-	h1 Radi li
+	h1 Radi!
 
 </template>
 
@@ -23,6 +23,8 @@ export default {
 
 <style lang="sass">
 
-.Component
+.Component {
+
+}
 
 </style>
