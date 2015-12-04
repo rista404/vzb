@@ -21,4 +21,6 @@ Route::post('admin/login', 'Auth\AuthController@postLogin');
 Route::get('admin/logout', 'Auth\AuthController@getLogout');
 Route::get('admin', 'AdminController@index');
 Route::get('admin/schools', 'AdminController@getSchools');
+Route::get('admin/school/{id}', 'AdminController@getSchool');
+Route::post('admin/school/{id}', 'AdminController@editSchool');
 
