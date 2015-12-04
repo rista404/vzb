@@ -23,8 +23,7 @@ export default {
 
 <style lang="sass">
 
-.Component {
-
-}
+.Component
+	font-size: 44px
 
 </style>

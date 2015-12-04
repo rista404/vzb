@@ -13047,6 +13047,26 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = Vue;
 }).call(this,require('_process'))
 },{"_process":1}],13:[function(require,module,exports){
+var inserted = exports.cache = {}
+
+exports.insert = function (css) {
+  if (inserted[css]) return
+  inserted[css] = true
+
+  var elem = document.createElement('style')
+  elem.setAttribute('type', 'text/css')
+
+  if ('textContent' in elem) {
+    elem.textContent = css
+  } else {
+    elem.styleSheet.cssText = css
+  }
+
+  document.getElementsByTagName('head')[0].appendChild(elem)
+  return elem
+}
+
+},{}],14:[function(require,module,exports){
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 
@@ -13074,14 +13094,15 @@ var App = Vue.extend({});
 // Fire up the router
 router.start(App, '#app');
 
-},{"../views/hello_world.vue":15,"vue":12,"vue-router":11}],14:[function(require,module,exports){
+},{"../views/hello_world.vue":16,"vue":12,"vue-router":11}],15:[function(require,module,exports){
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
 Vue.use(VueResource);
 
 var Router = require('./lib/router.js');
-},{"./lib/router.js":13,"vue":12,"vue-resource":4,"vue-router":11}],15:[function(require,module,exports){
+},{"./lib/router.js":14,"vue":12,"vue-resource":4,"vue-router":11}],16:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Component {\n  font-size: 44px; }\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13099,10 +13120,14 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/views/hello_world.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".Component {\n  font-size: 44px; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}]},{},[14]);
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}]},{},[15]);
