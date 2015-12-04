@@ -24,3 +24,10 @@ Route::get('admin/schools', 'AdminController@getSchools');
 Route::get('admin/school/{id}', 'AdminController@getSchool');
 Route::post('admin/school/{id}', 'AdminController@editSchool');
 
+
+//API v1
+Route::group(['prefix' => 'api/v1'], function() {
+    Route::any('schools', 'ApiController@getSchools');
+    Route::any('school/{id}', 'ApiController@getSchool');
+});
+
