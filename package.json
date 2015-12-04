@@ -26,6 +26,6 @@
     "dev-js": "./node_modules/.bin/watchify -t vueify -e resources/assets/app/main.js -o public/js/app.js",
     "build-js": "NODE_ENV=production ./node_modules/.bin/browserify -t vueify -e resources/assets/app/main.js/main.js | uglifyjs -c warnings=false -m > public/js/app.js",
     "dev-sass": "./node_modules/.bin/node-sass -w -r -i --include-path ./node_modules/bourbon/app/assets/stylesheets --output-style expanded resources/assets/sass/app.sass public/css/app.css",
-    "build-sass": "./node_modules/.bin/node-sass -r -i --output-style compressed resources/assets/sass/app.sass public/css/app.css"
+    "build-sass": "./node_modules/.bin/node-sass -r -i --include-path ./node_modules/bourbon/app/assets/stylesheets --output-style compressed resources/assets/sass/app.sass public/css/app.css"
   }
 }
