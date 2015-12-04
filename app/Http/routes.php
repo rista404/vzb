@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('index');
 });
+
+// Authentication routes...
+Route::get('admin/login', 'Auth\AuthController@getLogin');
+Route::post('admin/login', 'Auth\AuthController@postLogin');
+Route::get('admin/logout', 'Auth\AuthController@getLogout');
+Route::get('admin', 'AdminController@index');
+Route::get('admin/schools', 'AdminController@getSchools');
+
