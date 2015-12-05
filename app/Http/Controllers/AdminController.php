@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Dorm;
 use App\Photo;
 use App\School;
 use Illuminate\Http\Request;
@@ -62,8 +63,7 @@ class AdminController extends Controller {
             }
         }
 
-        Session::flash('success', 'Izmena je sacuvana');
-        return redirect(url('admin/school/'.$school->id));
+        return redirect(url('admin/school/'.$school->id))->with('success', 'Izmena je sacuvana');
     }
 
     public function deletePhoto($id) {
@@ -71,7 +71,56 @@ class AdminController extends Controller {
 
         $photo->delete();
 
-        Session::flash('success', 'Slika je obrisana');
-        return redirect(url('admin/school/'.$photo->school_id));
+        return redirect(url('admin/school/'.$photo->school_id))->with('success', 'Slika je obrisana');;
+    }
+
+    public function getDorms() {
+        $dorms = Dorm::all();
+
+        return view("admin/dorms")
+            ->with("dorms", $dorms);
+    }
+
+    public function getDorm($id) {
+        $dorm = Dorm::find($id);
+
+        return view("admin/edit_dorm")
+            ->with("dorm", $dorm);
+    }
+
+    public function editDorm($id, Request $request) {
+        $dorm = Dorm::find($id);
+
+        $dorm->name = $request->input('name');
+        $dorm->location = $request->input('location');
+        $dorm->description = $request->input('description');
+
+        $dorm->save();
+
+        return redirect(url("admin/dorm/".$dorm->id))->with("success", "Dom je izmenjen.");
+    }
+
+    public function addDorm() {
+        return view("admin/add_dorm");
+    }
+
+    public function saveDorm(Request $request) {
+        $dorm = new Dorm;
+
+        $dorm->name = $request->input('name');
+        $dorm->location = $request->input('location');
+        $dorm->description = $request->input('description');
+
+        $dorm->save();
+
+        return redirect("admin/dorms")->with("success", "Dom je sacuvan.");
+    }
+
+    public function deleteDorm($id) {
+        $dorm = Dorm::find($id);
+
+        $dorm->delete();
+
+        return redirect("admin/dorms")->with("success", "Dom je obrisan.");
     }
 }
