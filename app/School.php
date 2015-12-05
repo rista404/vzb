@@ -55,7 +55,7 @@ class School extends Model {
         $study_programs = json_decode($res->getBody());
 
         foreach ($schools as $key=>$school){
-            if (!self::isInBelgrade($school->univerzitet, $school->nazivu)) {
+            if (!self::isInBelgrade($school->univerzitet, $school->nazivu) || self::notNeeded($school->id)) {
                 unset($schools[$key]);
                 continue;
             }
@@ -72,6 +72,7 @@ class School extends Model {
             }
 
             $school->study_programs = [];
+            $school->trajanje = [];
             foreach ($study_programs as $study_program) {
                 if($study_program->id == $school->id) {
                     $school->study_programs[] = [
@@ -82,8 +83,14 @@ class School extends Model {
                         'zvanje' => $study_program->zvanje,
                         'skolarina' => $study_program->skolarina,
                     ];
+                    $school->polje = $study_program->polje;
+
+                    if(!in_array($study_program->trajanje, $school->trajanje)){
+                        $school->trajanje[] = $study_program->trajanje;
+                    }
                 }
             }
+
         }
 
 
@@ -95,8 +102,20 @@ class School extends Model {
         return $schools;
     }
 
-    private static function isInBelgrade($univerzitet, $naziv = "") {
+    public static function isInBelgrade($univerzitet, $naziv = "") {
         if(strpos($univerzitet,'Београд') !== false || ($univerzitet == "" && strpos($naziv,'Београд') !== false)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function notNeeded($id) {
+        $notNeededIDs = [
+            '145', '153'
+        ];
+
+        if(in_array($id,$notNeededIDs)) {
             return true;
         }
 

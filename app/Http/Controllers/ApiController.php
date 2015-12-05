@@ -15,6 +15,66 @@ class ApiController extends Controller {
         return $schools;
     }
 
+    public function getSchoolByType($type) {
+        $schools = School::takeAll();
+
+        if($type == 'strukovne') {
+            foreach($schools as $key => $school) {
+                if($school->univerzitet != "") {
+                    unset($schools[$key]);
+                }
+            }
+        }
+        else {
+            $tip = "";
+            switch($type) {
+                case 'umetnost':
+                    $tip = "Уметност";
+                    break;
+                case 'tehnicke':
+                    $tip = "Техничко-технолошке науке";
+                    break;
+                case 'prirodne':
+                    $tip = "Природно-математичке науке";
+                    break;
+                case 'drustvene':
+                    $tip = "Друштвено-хуманистичке науке";
+                    break;
+                case 'medicinske':
+                    $tip = "Медицинске науке";
+                    break;
+            }
+
+            if($tip == "") {
+                return abort(404);
+            }
+
+            foreach($schools as $key => $school) {
+                if($type = "drustvene" && $school->id = '9') {
+                    continue;
+                }
+
+                if($school->polje != $tip) {
+                    unset($schools[$key]);
+                }
+            }
+        }
+
+        return $schools;
+    }
+
+    public function getSchoolByEspb($espb) {
+        $schools = School::takeAll();
+
+        foreach($schools as $key => $school) {
+            if(!in_array($espb, $school->trajanje)) {
+                unset($schools[$key]);
+            }
+        }
+
+        return $schools;
+    }
+
     public function getSchool($id) {
         $school = School::takeOne($id);
 
