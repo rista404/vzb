@@ -1,7 +1,7 @@
 <template lang="jade">
 	
 .Component
-	h1 Radi!
+	h1 Hello world
 
 </template>
 
@@ -25,5 +25,6 @@ export default {
 
 .Component
 	font-size: 44px
+	display: flex
 
 </style>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Vodic za brucose</title>
 
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 

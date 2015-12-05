@@ -13102,7 +13102,7 @@ Vue.use(VueResource);
 
 var Router = require('./lib/router.js');
 },{"./lib/router.js":14,"vue":12,"vue-resource":4,"vue-router":11}],16:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".Component {\n  font-size: 44px; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert(".Component {\n  font-size: 44px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13114,14 +13114,14 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Component\"><h1>Radi!</h1></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Component\"><h1>Hello world</h1></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/views/hello_world.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".Component {\n  font-size: 44px; }\n"] = false
+    require("vueify-insert-css").cache[".Component {\n  font-size: 44px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
