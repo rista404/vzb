@@ -20,18 +20,21 @@ class School extends Model {
     }
 
     public static function takeAll() {
-        if (Cache::has('schools')) {
-            $schools = Cache::get('schools');
-        }
-        else {
-            $schools = self::storeSchoolsInCache();
-        }
-
+        $schools = self::getCached();
 
         return $schools;
     }
 
     public static function takeOne($id) {
+        $schools = self::getCached();
+
+        foreach ($schools as $school) {
+            if($school->id = $id)
+                return json_encode($school);
+        }
+    }
+
+    public static function getCached() {
         if (Cache::has('schools')) {
             $schools = Cache::get('schools');
         }
@@ -39,10 +42,7 @@ class School extends Model {
             $schools = self::storeSchoolsInCache();
         }
 
-        foreach ($schools as $school) {
-            if($school->id = $id)
-                return json_encode($school);
-        }
+        return $schools;
     }
 
     private static function storeSchoolsInCache() {
