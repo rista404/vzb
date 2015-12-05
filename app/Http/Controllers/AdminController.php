@@ -43,7 +43,7 @@ class AdminController extends Controller {
 
         $school->save();
 
-        if(Input::has('images')) {
+        if(Input::hasFile('images')) {
             $files = Input::file('images');
             foreach($files as $file) {
                 $destinationPath = 'uploads';
@@ -64,5 +64,14 @@ class AdminController extends Controller {
 
         Session::flash('success', 'Izmena je sacuvana');
         return redirect(url('admin/school/'.$school->id));
+    }
+
+    public function deletePhoto($id) {
+        $photo = Photo::find($id);
+
+        $photo->delete();
+
+        Session::flash('success', 'Slika je obrisana');
+        return redirect(url('admin/school/'.$photo->school_id));
     }
 }

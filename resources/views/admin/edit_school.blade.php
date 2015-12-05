@@ -46,6 +46,16 @@
                     </form>
 
                 </div>
+
+                <h3>Slike:</h3>
+                <div class="row">
+                    @foreach($school->photos as $photo)
+                        <div class="col-md-3">
+                            <img src="/{{$photo->location}}" alt="" style="width: 100%">
+                            <a class="btn btn-danger" href="{{url('admin/delete/photo/'.$photo->id)}}">Obrisi</a>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

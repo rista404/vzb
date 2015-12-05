@@ -23,6 +23,7 @@ Route::get('admin', 'AdminController@index');
 Route::get('admin/schools', 'AdminController@getSchools');
 Route::get('admin/school/{id}', 'AdminController@getSchool');
 Route::post('admin/school/{id}', 'AdminController@editSchool');
+Route::get('admin/delete/photo/{id}', 'AdminController@deletePhoto');
 
 
 //API v1
