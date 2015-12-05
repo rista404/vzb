@@ -1312,6 +1312,19 @@ hr {
   }
 }
 
+hr {
+  border-top: 1px solid #21c3eb;
+  opacity: 0.3;
+}
+
+.clickable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif;
 }

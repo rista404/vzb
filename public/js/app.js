@@ -13067,42 +13067,38 @@ exports.insert = function (css) {
 }
 
 },{}],14:[function(require,module,exports){
-var Vue = require('vue');
-var VueRouter = require('vue-router');
+var __vueify_style__ = require("vueify-insert-css").insert(".Filter_Fakulteta h2 {\n  color: white;\n  font-weight: 400;\n  margin-bottom: 8px; }\n  .Filter_Fakulteta h2.head {\n    margin-top: 15px;\n    color: #21c3eb; }\n  .Filter_Fakulteta h2 a {\n    margin-down: 10px; }\n\n.Filter_Fakulteta hr {\n  margin: 10px 0; }\n\n@media screen and (min-width: 768px) {\n  .Filter_Fakulteta .indent {\n    margin-left: 30px; } }\n")
+"use strict";
 
-// Set up router
-Vue.use(VueRouter);
-var router = new VueRouter({
-	linkActiveClass: "active"
+Object.defineProperty(exports, "__esModule", {
+	value: true
 });
-
-// Include Views
-var HelloWorld = require('../views/hello_world.vue');
-
-// Router paths
-router.map({
-
-	'/': {
-		component: HelloWorld
+exports.default = {
+	data: function data() {
+		return {
+			showMore: false
+		};
 	}
-
-});
-
-// Create an empty component to hold views
-var App = Vue.extend({});
-
-// Fire up the router
-router.start(App, '#app');
-
-},{"../views/hello_world.vue":16,"vue":12,"vue-router":11}],15:[function(require,module,exports){
-var Vue = require('vue');
-var VueRouter = require('vue-router');
-var VueResource = require('vue-resource');
-Vue.use(VueResource);
-
-var Router = require('./lib/router.js');
-},{"./lib/router.js":14,"vue":12,"vue-resource":4,"vue-router":11}],16:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".Component {\n  font-size: 24px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n")
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Filtriraj fakultete:</h2><hr/><div class=\"row\"><div class=\"indent col-sm-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"{ path='/' }\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"{ path='/' }\">180</a></h2><h2><a v-link=\"{ path='/' }\">240</a></h2><h2><a v-link=\"{ path='/' }\">300</a></h2><h2><a v-link=\"{ path='/' }\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-sm-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"{ path='/' }\">Umetnost</a></h2><h2><a v-link=\"{ path='/' }\">Tehnicke</a></h2><h2><a v-link=\"{ path='/' }\">Prirodne</a></h2><h2><a v-link=\"{ path='/' }\">Drustvene</a></h2><h2><a v-link=\"{ path='/' }\">Medicinske</a></h2></div></div></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/components/Filter_Fakulteta.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".Filter_Fakulteta h2 {\n  color: white;\n  font-weight: 400;\n  margin-bottom: 8px; }\n  .Filter_Fakulteta h2.head {\n    margin-top: 15px;\n    color: #21c3eb; }\n  .Filter_Fakulteta h2 a {\n    margin-down: 10px; }\n\n.Filter_Fakulteta hr {\n  margin: 10px 0; }\n\n@media screen and (min-width: 768px) {\n  .Filter_Fakulteta .indent {\n    margin-left: 30px; } }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],15:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Profile .Profile__Name {\n  display: inline-block;\n  vertical-align: middle;\n  padding-right: 20px; }\n  .Profile .Profile__Name h3 {\n    font-size: 22px;\n    font-weight: 500;\n    line-height: 80px; }\n\n.Profile .Profile__Image {\n  display: inline-block;\n  vertical-align: middle; }\n  .Profile .Profile__Image img {\n    border: 2px solid #21c3eb;\n    border-radius: 21px;\n    width: 42px;\n    cursor: pointer; }\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13114,14 +13110,14 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Component\"><h1>Hello world</h1></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Profile\"><div class=\"Profile__Name\"><h3>Debeli Gmaz</h3></div><div class=\"Profile__Image\"><img src=\"http://www.radfaces.com/images/avatars/eddie-gelfen.png\"/></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/rista/Projects/vzb/resources/assets/app/views/hello_world.vue"
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/components/Profile.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".Component {\n  font-size: 24px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n"] = false
+    require("vueify-insert-css").cache[".Profile .Profile__Name {\n  display: inline-block;\n  vertical-align: middle;\n  padding-right: 20px; }\n  .Profile .Profile__Name h3 {\n    font-size: 22px;\n    font-weight: 500;\n    line-height: 80px; }\n\n.Profile .Profile__Image {\n  display: inline-block;\n  vertical-align: middle; }\n  .Profile .Profile__Image img {\n    border: 2px solid #21c3eb;\n    border-radius: 21px;\n    width: 42px;\n    cursor: pointer; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -13130,4 +13126,162 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}]},{},[15]);
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],16:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Side_Menu {\n  padding: 70px 0 40px 0;\n  text-align: center; }\n  @media screen and (min-width: 992px) {\n    .Side_Menu {\n      padding: 70px 0;\n      padding-right: 15px;\n      text-align: right; } }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Title {\n    display: inline-block;\n    vertical-align: middle;\n    text-transform: uppercase;\n    padding-right: 15px;\n    font-size: 22px;\n    line-height: 1;\n    font-weight: 500;\n    letter-spacing: 1px;\n    color: #333; }\n    .Side_Menu .Side_Menu__Logo .Side_Menu__Title:hover {\n      color: #fdff56; }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Search {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer; }\n  .Side_Menu .Side_Menu__Items {\n    padding: 40px 0; }\n    .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n      display: inline-block;\n      padding: 0 10px; }\n      @media screen and (min-width: 992px) {\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n          padding-bottom: 25px;\n          display: inline; } }\n      .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 {\n        font-size: 22px;\n        font-weight: 400; }\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a {\n          color: #333; }\n          .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a.active {\n            color: #fdff56; }\n")
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+	data: function data() {
+		return {};
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Side_Menu\"><div class=\"Side_Menu__Logo\"><a v-link=\"{ path: '/' }\" class=\"Side_Menu__Title\">Vodic <span>za </span><br/>brucose</a><div class=\"Side_Menu__Search\"><img src=\"public/img/loop.png\"/></div></div><ul class=\"Side_Menu__Items\"><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/fakulteti' }\">Fakulteti</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a href=\"#\">Domovi</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a href=\"#\">Menze</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a href=\"#\">Zanimljivosti</a></h3></li></ul></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/components/Side_Menu.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".Side_Menu {\n  padding: 70px 0 40px 0;\n  text-align: center; }\n  @media screen and (min-width: 992px) {\n    .Side_Menu {\n      padding: 70px 0;\n      padding-right: 15px;\n      text-align: right; } }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Title {\n    display: inline-block;\n    vertical-align: middle;\n    text-transform: uppercase;\n    padding-right: 15px;\n    font-size: 22px;\n    line-height: 1;\n    font-weight: 500;\n    letter-spacing: 1px;\n    color: #333; }\n    .Side_Menu .Side_Menu__Logo .Side_Menu__Title:hover {\n      color: #fdff56; }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Search {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer; }\n  .Side_Menu .Side_Menu__Items {\n    padding: 40px 0; }\n    .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n      display: inline-block;\n      padding: 0 10px; }\n      @media screen and (min-width: 992px) {\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n          padding-bottom: 25px;\n          display: inline; } }\n      .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 {\n        font-size: 22px;\n        font-weight: 400; }\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a {\n          color: #333; }\n          .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a.active {\n            color: #fdff56; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],17:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n  display: inline-block;\n  padding-right: 20px; }\n  @media screen and (min-width: 768px) {\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n      padding-right: 35px; } }\n  .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 {\n    line-height: 80px;\n    font-weight: 400;\n    font-size: 20px; }\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a, .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a:hover {\n      color: #333; }\n")
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _Profile = require('./Profile.vue');
+
+var _Profile2 = _interopRequireDefault(_Profile);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+	data: function data() {
+		return {};
+	},
+
+	components: {
+		profile: _Profile2.default
+	}
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<header class=\"Top-Bar\"><div class=\"container\"><div class=\"col-xs-7\"><ul class=\"Top-Bar__Nav\"><li class=\"Top-Bar__Nav_Item\"><h3> <a href=\"#\">Info</a></h3></li><li class=\"Top-Bar__Nav_Item\"><h3> <a href=\"#\">Kontakt</a></h3></li><li class=\"Top-Bar__Nav_Item\"><h3> <a href=\"#\">Uputstvo</a></h3></li></ul></div><div class=\"col-xs-5 ta-right\"><profile></profile></div></div></header>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/components/Top_Bar.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n  display: inline-block;\n  padding-right: 20px; }\n  @media screen and (min-width: 768px) {\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n      padding-right: 35px; } }\n  .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 {\n    line-height: 80px;\n    font-weight: 400;\n    font-size: 20px; }\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a, .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a:hover {\n      color: #333; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"./Profile.vue":15,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],18:[function(require,module,exports){
+var Vue = require('vue');
+var VueRouter = require('vue-router');
+
+// Set up router
+Vue.use(VueRouter);
+var router = new VueRouter({
+	linkActiveClass: "active"
+});
+
+// Include Views
+
+// Router paths
+router.map({
+
+	'/': {
+		component: require('../views/Home_View.vue'),
+
+		subRoutes: {
+			'/fakulteti': {
+				component: require('../components/Filter_Fakulteta.vue')
+			}
+		}
+	},
+
+	
+
+});
+
+// Create an empty component to hold views
+var App = Vue.extend({});
+
+// Fire up the router
+router.start(App, '#app');
+
+},{"../components/Filter_Fakulteta.vue":14,"../views/Home_View.vue":20,"vue":12,"vue-router":11}],19:[function(require,module,exports){
+var Vue = require('vue');
+var VueRouter = require('vue-router');
+var VueResource = require('vue-resource');
+Vue.use(VueResource);
+
+var Router = require('./lib/router.js');
+},{"./lib/router.js":18,"vue":12,"vue-resource":4,"vue-router":11}],20:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Home_View .Landing_Section {\n  position: relative;\n  background-color: #21c3eb; }\n\n.Home_View .View_Frame__holder {\n  padding-left: 0;\n  padding-right: 0; }\n\n.Home_View .View_Frame {\n  min-height: 650px;\n  padding: 70px 40px;\n  background-color: #31363c; }\n")
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _Top_Bar = require('../components/Top_Bar.vue');
+
+var _Top_Bar2 = _interopRequireDefault(_Top_Bar);
+
+var _Side_Menu = require('../components/Side_Menu.vue');
+
+var _Side_Menu2 = _interopRequireDefault(_Side_Menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+	data: function data() {
+		return {};
+	},
+
+	components: {
+		"top-bar": _Top_Bar2.default,
+		"side-menu": _Side_Menu2.default
+	}
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><top-bar></top-bar><div class=\"Landing_Section\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-3 col-lg-2\"><side-menu></side-menu></div><div class=\"View_Frame__holder col-md-9 col-lg-10\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div></div></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Home_View.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".Home_View .Landing_Section {\n  position: relative;\n  background-color: #21c3eb; }\n\n.Home_View .View_Frame__holder {\n  padding-left: 0;\n  padding-right: 0; }\n\n.Home_View .View_Frame {\n  min-height: 650px;\n  padding: 70px 40px;\n  background-color: #31363c; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"../components/Side_Menu.vue":16,"../components/Top_Bar.vue":17,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}]},{},[19]);
