@@ -3,15 +3,18 @@
 header.Top-Bar
 	.container
 
-		.col-sm-8
+		.col-xs-7
 			ul.Top-Bar__Nav
 				li.Top-Bar__Nav_Item
-					h3 Info
+					h3 
+						a(href="#") Info
 				li.Top-Bar__Nav_Item
-					h3 Kontakt
+					h3 
+						a(href="#") Kontakt
 				li.Top-Bar__Nav_Item
-					h3 Uputstvo
-		.col-sm-4.ta-right
+					h3 
+						a(href="#") Uputstvo
+		.col-xs-5.ta-right
 			profile
 
 </template>
@@ -29,7 +32,7 @@ export default {
 		};
 	},
 
-	components {
+	components: {
 		profile: Profile
 	}
 
@@ -46,11 +49,16 @@ export default {
 
 		.Top-Bar__Nav_Item
 			display: inline-block
-			padding-right: 35px
+			padding-right: 20px
+			@media screen and (min-width: 768px)
+				padding-right: 35px
 
 			h3
 				line-height: 80px
 				font-weight: 400
 				font-size: 20px
+
+				a, a:hover
+					color: #333
 
 </style>
