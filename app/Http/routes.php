@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admin'], function() {
 });
 
 //API v1 routes
-Route::group(['prefix' => 'api/v1'], function() {
+Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function() {
     Route::any('schools', 'ApiController@getSchools');
     Route::any('schools/{id}', 'ApiController@getSchool')
         ->where('id', '[0-9]+');
