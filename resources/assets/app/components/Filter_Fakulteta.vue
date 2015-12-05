@@ -1,10 +1,10 @@
 <template lang="jade">
 	
 .Filter_Fakulteta
-	h2 Filtriraj fakultete:
+	h2 Pronadji fakultet:
 	hr
 	.row
-		.indent.col-sm-6.col-md-4
+		.indent.col-xs-6.col-md-4
 			h2.head Studije
 			hr
 			h2
@@ -22,7 +22,7 @@
 			h2
 				a(v-link="{ path='/' }") 360
 
-		.indent.col-sm-6.col-md-4(v-show="showMore")
+		.indent.col-xs-6.col-md-4(v-show="showMore")
 			h2.head Akademske
 			hr
 			h2

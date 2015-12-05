@@ -13081,7 +13081,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Filtriraj fakultete:</h2><hr/><div class=\"row\"><div class=\"indent col-sm-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"{ path='/' }\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"{ path='/' }\">180</a></h2><h2><a v-link=\"{ path='/' }\">240</a></h2><h2><a v-link=\"{ path='/' }\">300</a></h2><h2><a v-link=\"{ path='/' }\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-sm-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"{ path='/' }\">Umetnost</a></h2><h2><a v-link=\"{ path='/' }\">Tehnicke</a></h2><h2><a v-link=\"{ path='/' }\">Prirodne</a></h2><h2><a v-link=\"{ path='/' }\">Drustvene</a></h2><h2><a v-link=\"{ path='/' }\">Medicinske</a></h2></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Pronadji fakultet:</h2><hr/><div class=\"row\"><div class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"{ path='/' }\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"{ path='/' }\">180</a></h2><h2><a v-link=\"{ path='/' }\">240</a></h2><h2><a v-link=\"{ path='/' }\">300</a></h2><h2><a v-link=\"{ path='/' }\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"{ path='/' }\">Umetnost</a></h2><h2><a v-link=\"{ path='/' }\">Tehnicke</a></h2><h2><a v-link=\"{ path='/' }\">Prirodne</a></h2><h2><a v-link=\"{ path='/' }\">Drustvene</a></h2><h2><a v-link=\"{ path='/' }\">Medicinske</a></h2></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13254,21 +13254,41 @@ var _Side_Menu = require('../components/Side_Menu.vue');
 
 var _Side_Menu2 = _interopRequireDefault(_Side_Menu);
 
+var _List = require('./List.vue');
+
+var _List2 = _interopRequireDefault(_List);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+
+	route: {
+		data: function data(transition) {
+
+			var url = "http://localhost:8000/api/v1/schools";
+
+			this.$http.get(url, function (res, status, request) {
+
+				transition.next({ res: res });
+			});
+		}
+	},
+
 	data: function data() {
-		return {};
+		return {
+			res: {}
+		};
 	},
 
 	components: {
 		"top-bar": _Top_Bar2.default,
-		"side-menu": _Side_Menu2.default
+		"side-menu": _Side_Menu2.default,
+		"list": _List2.default
 	}
 
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><top-bar></top-bar><div class=\"Landing_Section\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-3 col-lg-2\"><side-menu></side-menu></div><div class=\"View_Frame__holder col-md-9 col-lg-10\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><top-bar></top-bar><div class=\"Landing_Section\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-3 col-lg-2\"><side-menu></side-menu></div><div class=\"View_Frame__holder col-md-9 col-lg-10\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div></div><pre><list list=\"{{ res }}\"></list>{{ $data | json }}</pre></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13284,4 +13304,33 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../components/Side_Menu.vue":16,"../components/Top_Bar.vue":17,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}]},{},[19]);
+},{"../components/Side_Menu.vue":16,"../components/Top_Bar.vue":17,"./List.vue":21,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],21:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+
+	props: ['list'],
+
+	data: function data() {
+		return {
+			res: {}
+		};
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><div v-for=\"single in list\" class=\"Single col-md-6\"><h1>{{ single.nazivu }}</h1><h3>{{ single.adresa }}</h3></div></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/views/List.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":12,"vue-hot-reload-api":2}]},{},[19]);
