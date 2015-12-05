@@ -37,5 +37,7 @@ Route::group(['prefix' => 'admin'], function() {
 Route::group(['prefix' => 'api/v1'], function() {
     Route::any('schools', 'ApiController@getSchools');
     Route::any('schools/{id}', 'ApiController@getSchool');
+    Route::any('dorms', 'ApiController@getDorms');
+    Route::any('dorms/{id}', 'ApiController@getDorm');
 });
 
