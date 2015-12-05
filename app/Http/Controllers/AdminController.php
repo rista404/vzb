@@ -1,7 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use App\Photo;
 use App\School;
 use Illuminate\Http\Request;
+use Input;
+use Validator;
+use Redirect;
+use Session;
+use File;
 
 class AdminController extends Controller {
 
@@ -37,8 +43,26 @@ class AdminController extends Controller {
 
         $school->save();
 
-        return view("admin/edit_school")
-            ->with("school", $school)
-            ->with('success', "Izmena je sacuvana");
+        if(Input::has('images')) {
+            $files = Input::file('images');
+            foreach($files as $file) {
+                $destinationPath = 'uploads';
+                $filename = $file->getClientOriginalName();
+                $new_name = uniqid().".".File::extension($filename);
+                $upload_success = $file->move(public_path()."/".$destinationPath, $new_name);
+                $uploaded_files[] = $destinationPath."/".$new_name;
+            }
+
+            foreach($uploaded_files as $file) {
+                $photo = new Photo;
+                $photo->school_id = $school->id;
+                $photo->location = $file;
+
+                $photo->save();
+            }
+        }
+
+        Session::flash('success', 'Izmena je sacuvana');
+        return redirect(url('admin/school/'.$school->id));
     }
 }

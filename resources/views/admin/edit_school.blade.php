@@ -3,12 +3,12 @@
 @section('main')
     <div class="container-fluid main-container">
         <div class="col-md-12 content">
-            @if(isset($success))
+            @if(session('success') !== null)
                 <div class="alert alert-success alert-dismissible fade in" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-                    {{$success}}
+                    {{session('success')}}
                 </div>
             @endif
             <div class="panel panel-default">
