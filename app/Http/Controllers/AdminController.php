@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Dorm;
+use App\Organization;
 use App\Photo;
 use App\School;
 use Illuminate\Http\Request;
@@ -122,5 +123,55 @@ class AdminController extends Controller {
         $dorm->delete();
 
         return redirect("admin/dorms")->with("success", "Dom je obrisan.");
+    }
+
+    public function getOrganizations() {
+        $organizations = Organization::all();
+
+        return view("admin/organizations")
+            ->with("organizations", $organizations);
+    }
+
+    public function getOrganization($id) {
+        $organization = Organization::find($id);
+
+        return view("admin/edit_organization")
+            ->with("organization", $organization);
+    }
+
+    public function editOrganization($id, Request $request) {
+        $organization = Organization::find($id);
+
+        $organization->name = $request->input('name');
+        $organization->contact = $request->input('contact');
+        $organization->description = $request->input('description');
+
+        $organization->save();
+
+        return redirect(url("admin/organization/".$organization->id))->with("success", "Organizacija je izmenjen.");
+    }
+
+    public function addOrganization() {
+        return view("admin/add_organization");
+    }
+
+    public function saveOrganization(Request $request) {
+        $organization = new Organization;
+
+        $organization->name = $request->input('name');
+        $organization->contact = $request->input('contact');
+        $organization->description = $request->input('description');
+
+        $organization->save();
+
+        return redirect("admin/organizations")->with("success", "Organizacija je sacuvana.");
+    }
+
+    public function deleteOrganization($id) {
+        $organization = Organization::find($id);
+
+        $organization->delete();
+
+        return redirect("admin/organizations")->with("success", "Organizacija je obrisana.");
     }
 }

@@ -20,17 +20,27 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('login', 'Auth\AuthController@getLogin');
     Route::post('login', 'Auth\AuthController@postLogin');
     Route::get('logout', 'Auth\AuthController@getLogout');
+
     Route::get('admin', 'AdminController@index');
+
     Route::get('schools', 'AdminController@getSchools');
     Route::get('school/{id}', 'AdminController@getSchool');
     Route::post('school/{id}', 'AdminController@editSchool');
     Route::get('delete/photo/{id}', 'AdminController@deletePhoto');
+
     Route::get('dorms', 'AdminController@getDorms');
     Route::get('dorm/add', 'AdminController@addDorm');
     Route::post('dorm/add', 'AdminController@saveDorm');
     Route::get('dorm/{id}', 'AdminController@getDorm');
     Route::post('dorm/{id}', 'AdminController@editDorm');
     Route::get('dorm/delete/{id}', 'AdminController@deleteDorm');
+
+    Route::get('organizations', 'AdminController@getOrganizations');
+    Route::get('organization/add', 'AdminController@addOrganization');
+    Route::post('organization/add', 'AdminController@saveOrganization');
+    Route::get('organization/{id}', 'AdminController@getOrganization');
+    Route::post('organization/{id}', 'AdminController@editOrganization');
+    Route::get('organization/delete/{id}', 'AdminController@deleteOrganization');
 });
 
 //API v1 routes

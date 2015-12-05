@@ -16,7 +16,7 @@
                     Dodaj novi dom
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" action="/admin/dorm/add" method="post">
+                    <form class="form-horizontal" action="/admin/organization/add" method="post">
                         {!! csrf_field() !!}
                         <fieldset>
 
@@ -28,9 +28,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="textinput">Lokacija</label>
-                                <div class="col-md-4">
-                                    <input id="location" name="location" type="text" class="form-control input-md">
+                                <label class="col-md-2 control-label" for="textinput">Kontakt</label>
+                                <div class="col-md-8">
+                                    <textarea name="contact" id="contact" class="form-control input-md"></textarea>
                                 </div>
                             </div>
 
@@ -60,6 +60,7 @@
 @section('js')
     <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
     <script>
+        CKEDITOR.replace('contact');
         CKEDITOR.replace('description');
     </script>
 @endsection

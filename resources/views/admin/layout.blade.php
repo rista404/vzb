@@ -28,6 +28,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/admin/schools">Skole</a></li>
                 <li><a href="/admin/dorms">Domovi</a></li>
+                <li><a href="/admin/organizations">Studentske Organizacije</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{url('admin/logout')}}">Logout</a></li>

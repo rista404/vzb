@@ -60,8 +60,6 @@
 @section('js')
     <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
     <script>
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace( 'description' );
+        CKEDITOR.replace('description');
     </script>
 @endsection
