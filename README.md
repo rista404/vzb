@@ -21,6 +21,18 @@ Create .env file from .env.example and update database details
 
 /api/v1/schools/{id} - Get school per ID
 
+/api/v1/schools/type/{type} - Get schools by type
+    
+    types:
+    - strukovne
+    - umetnost
+    - tehnicke
+    - prirodne
+    - drustvene
+    - medicinske
+    
+/api/v1/schools/espb/{espb} - Get schools by ESPB
+
 /api/v1/dorms - Get all dorms
 
 /api/v1/dorms/{id} - Get dorm per ID
@@ -28,4 +40,3 @@ Create .env file from .env.example and update database details
 /api/v1/organizations - Get all organizations
 
 /api/v1/organizations/{id} - Get organization per ID
-
