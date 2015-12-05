@@ -24,7 +24,7 @@ export default {
 <style lang="sass">
 
 .Component
-	font-size: 44px
+	font-size: 24px
 	display: flex
 
 </style>

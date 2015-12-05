@@ -13102,7 +13102,7 @@ Vue.use(VueResource);
 
 var Router = require('./lib/router.js');
 },{"./lib/router.js":14,"vue":12,"vue-resource":4,"vue-router":11}],16:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".Component {\n  font-size: 44px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert(".Component {\n  font-size: 24px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13121,7 +13121,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/views/hello_world.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".Component {\n  font-size: 44px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n"] = false
+    require("vueify-insert-css").cache[".Component {\n  font-size: 24px;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
