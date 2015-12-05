@@ -49,29 +49,43 @@ class School extends Model {
         $client = new Client;
 
         $res = $client->request("GET", "http://opendata.mpn.gov.rs/1337/get.php?dataset=vsustanove2016&lang=en&term=json");
-
         $schools = json_decode($res->getBody());
 
-        $schools_from_db = School::with('photos')->get();
+        $res = $client->request("GET", "http://opendata.mpn.gov.rs/1337/get.php?dataset=sprogrami2016&lang=en&term=json");
+        $study_programs = json_decode($res->getBody());
 
         foreach ($schools as $key=>$school){
-            foreach ($schools_from_db as $key_db=>$school_from_db){
-                if(!self::isInBelgrade($school->univerzitet, $school->nazivu)) {
-                    unset($schools[$key]);
-                    continue;
+            if (!self::isInBelgrade($school->univerzitet, $school->nazivu)) {
+                unset($schools[$key]);
+                continue;
+            }
+
+            $school_from_db = School::where("id", $school->id)->first();
+            if($school_from_db != null) {
+                $schools[$key]->bus = $school_from_db->bus;
+
+                $photos = [];
+                foreach ($school_from_db->photos as $photo) {
+                    $photos[]['location'] = $photo->location;
                 }
+                $schools[$key]->photos = $photos;
+            }
 
-                if($school->id == $school_from_db->id) {
-                    $schools[$key]->bus = $school_from_db->bus;
-
-                    $photos = [];
-                    foreach ($school_from_db->photos as $photo) {
-                        $photos[]['location'] = $photo->location;
-                    }
-                    $schools[$key]->photos = $photos;
+            $school->study_programs = [];
+            foreach ($study_programs as $study_program) {
+                if($study_program->id == $school->id) {
+                    $school->study_programs[] = [
+                        'naziv' => $study_program->naziv,
+                        'nivo' => $study_program->nivo,
+                        'trajanje' => $study_program->trajanje,
+                        'polje' => $study_program->polje,
+                        'zvanje' => $study_program->zvanje,
+                        'skolarina' => $study_program->skolarina,
+                    ];
                 }
             }
         }
+
 
         //Store in cache for 7 days
         Cache::remember('schools', 10080, function() use ($schools) {
