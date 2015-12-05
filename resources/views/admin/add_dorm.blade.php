@@ -13,32 +13,38 @@
             @endif
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{$school->name}}
+                    Dodaj novi dom
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" action="/admin/school/{{$school->id}}" enctype="multipart/form-data" method="post">
+                    <form class="form-horizontal" action="/admin/dorm/add" method="post">
                         {!! csrf_field() !!}
                         <fieldset>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Autobusi</label>
+                                <label class="col-md-2 control-label" for="textinput">Ime</label>
                                 <div class="col-md-4">
-                                    <input id="bus" name="bus" type="text" class="form-control input-md" value="{{$school->bus}}">
-                                    <span class="help-block">Brojeve odvojite zarezom</span>
+                                    <input id="name" name="name" type="text" class="form-control input-md">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">Slike</label>
+                                <label class="col-md-2 control-label" for="textinput">Lokacija</label>
                                 <div class="col-md-4">
-                                    {!! Form::file('images[]', array('multiple'=>true)) !!}
+                                    <input id="location" name="location" type="text" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="textinput">Opis</label>
+                                <div class="col-md-8">
+                                    <textarea name="description" id="description" class="form-control input-md"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="textinput"></label>
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-success">Izmeni</button>
+                                    <button type="submit" class="btn btn-success">Sacuvaj</button>
                                 </div>
                             </div>
 
@@ -46,20 +52,14 @@
                     </form>
 
                 </div>
-
-                <h3>Slike:</h3>
-                <div class="row">
-                    @foreach($school->photos as $photo)
-                        <div class="col-md-3">
-                            <img src="/{{$photo->location}}" alt="" style="width: 100%">
-                            <a class="btn btn-danger" href="{{url('admin/delete/photo/'.$photo->id)}}">Obrisi</a>
-                        </div>
-                    @endforeach
-                </div>
             </div>
         </div>
     </div>
 @endsection
 
 @section('js')
+    <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('description');
+    </script>
 @endsection

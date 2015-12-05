@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Dorm;
+use App\Organization;
 use App\Photo;
 use App\School;
 use Illuminate\Http\Request;
@@ -43,7 +45,7 @@ class AdminController extends Controller {
 
         $school->save();
 
-        if(Input::has('images')) {
+        if(Input::hasFile('images')) {
             $files = Input::file('images');
             foreach($files as $file) {
                 $destinationPath = 'uploads';
@@ -62,7 +64,114 @@ class AdminController extends Controller {
             }
         }
 
-        Session::flash('success', 'Izmena je sacuvana');
-        return redirect(url('admin/school/'.$school->id));
+        return redirect(url('admin/school/'.$school->id))->with('success', 'Izmena je sacuvana');
+    }
+
+    public function deletePhoto($id) {
+        $photo = Photo::find($id);
+
+        $photo->delete();
+
+        return redirect(url('admin/school/'.$photo->school_id))->with('success', 'Slika je obrisana');;
+    }
+
+    public function getDorms() {
+        $dorms = Dorm::all();
+
+        return view("admin/dorms")
+            ->with("dorms", $dorms);
+    }
+
+    public function getDorm($id) {
+        $dorm = Dorm::find($id);
+
+        return view("admin/edit_dorm")
+            ->with("dorm", $dorm);
+    }
+
+    public function editDorm($id, Request $request) {
+        $dorm = Dorm::find($id);
+
+        $dorm->name = $request->input('name');
+        $dorm->location = $request->input('location');
+        $dorm->description = $request->input('description');
+
+        $dorm->save();
+
+        return redirect(url("admin/dorm/".$dorm->id))->with("success", "Dom je izmenjen.");
+    }
+
+    public function addDorm() {
+        return view("admin/add_dorm");
+    }
+
+    public function saveDorm(Request $request) {
+        $dorm = new Dorm;
+
+        $dorm->name = $request->input('name');
+        $dorm->location = $request->input('location');
+        $dorm->description = $request->input('description');
+
+        $dorm->save();
+
+        return redirect("admin/dorms")->with("success", "Dom je sacuvan.");
+    }
+
+    public function deleteDorm($id) {
+        $dorm = Dorm::find($id);
+
+        $dorm->delete();
+
+        return redirect("admin/dorms")->with("success", "Dom je obrisan.");
+    }
+
+    public function getOrganizations() {
+        $organizations = Organization::all();
+
+        return view("admin/organizations")
+            ->with("organizations", $organizations);
+    }
+
+    public function getOrganization($id) {
+        $organization = Organization::find($id);
+
+        return view("admin/edit_organization")
+            ->with("organization", $organization);
+    }
+
+    public function editOrganization($id, Request $request) {
+        $organization = Organization::find($id);
+
+        $organization->name = $request->input('name');
+        $organization->contact = $request->input('contact');
+        $organization->description = $request->input('description');
+
+        $organization->save();
+
+        return redirect(url("admin/organization/".$organization->id))->with("success", "Organizacija je izmenjen.");
+    }
+
+    public function addOrganization() {
+        return view("admin/add_organization");
+    }
+
+    public function saveOrganization(Request $request) {
+        $organization = new Organization;
+
+        $organization->name = $request->input('name');
+        $organization->contact = $request->input('contact');
+        $organization->description = $request->input('description');
+
+        $organization->save();
+
+        return redirect("admin/organizations")->with("success", "Organizacija je sacuvana.");
+    }
+
+    public function deleteOrganization($id) {
+        $organization = Organization::find($id);
+
+        $organization->delete();
+
+        return redirect("admin/organizations")->with("success", "Organizacija je obrisana.");
     }
 }
