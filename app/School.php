@@ -13,7 +13,7 @@ class School extends Model {
      */
     protected $table = 'schools';
 
-    public function photo() {
+    public function photos() {
         return $this->hasMany('App\Photo', 'school_id', 'id');
     }
 }

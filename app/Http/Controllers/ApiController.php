@@ -13,7 +13,7 @@ class ApiController extends Controller {
 
         $schools = json_decode($res->getBody());
 
-        $schools_from_db = School::with('photo')->get();
+        $schools_from_db = School::where('id', 153)->with('photos')->get();
 
         foreach ($schools as $key=>$school){
             foreach ($schools_from_db as $key_db=>$school_from_db){
@@ -22,9 +22,15 @@ class ApiController extends Controller {
                     continue;
                 }
 
-                if($school->id == $school_from_db->id)
+                if($school->id == $school_from_db->id) {
                     $schools[$key]->bus = $school_from_db->bus;
-                    $schools[$key]->photos = $school_from_db->photo;
+
+                    $photos = [];
+                    foreach ($school_from_db->photos as $photo) {
+                        $photos[]['location'] = $photo->location;
+                    }
+                    $schools[$key]->photos = $photos;
+                }
             }
         }
 
@@ -37,7 +43,7 @@ class ApiController extends Controller {
         return $school;
     }
 
-    private function isInBelgrade($univerzitet, $naziv) {
+    private function isInBelgrade($univerzitet, $naziv = "") {
         if(strpos($univerzitet,'Београд') !== false || ($univerzitet == "" && strpos($naziv,'Београд') !== false)) {
             return true;
         }
