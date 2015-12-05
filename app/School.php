@@ -99,7 +99,7 @@ class School extends Model {
             return $schools;
         });
 
-        return $schools;
+        return array_values($schools);
     }
 
     public static function isInBelgrade($univerzitet, $naziv = "") {
