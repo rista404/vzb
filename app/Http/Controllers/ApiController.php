@@ -13,17 +13,18 @@ class ApiController extends Controller {
 
         $schools = json_decode($res->getBody());
 
-        $schools_from_db = School::all();
+        $schools_from_db = School::with('photo')->get();
 
         foreach ($schools as $key=>$school){
             foreach ($schools_from_db as $key_db=>$school_from_db){
-                if($school->univerzitet != "Универзитет у Београду" && $school->univerzitet != "Универзитет уметности у Београду" && ($school->univerzitet == "" && strpos($school->nazivu,'Београд') === false)) {
+                if(!$this->isInBelgrade($school->univerzitet, $school->nazivu)) {
                     unset($schools[$key]);
                     continue;
                 }
 
                 if($school->id == $school_from_db->id)
                     $schools[$key]->bus = $school_from_db->bus;
+                    $schools[$key]->photos = $school_from_db->photo;
             }
         }
 
@@ -34,5 +35,13 @@ class ApiController extends Controller {
         $school = School::find($id);
 
         return $school;
+    }
+
+    private function isInBelgrade($univerzitet, $naziv) {
+        if(strpos($univerzitet,'Београд') !== false || ($univerzitet == "" && strpos($naziv,'Београд') !== false)) {
+            return true;
+        }
+
+        return false;
     }
 }

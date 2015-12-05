@@ -4,16 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class School extends Model {
+class Photo extends Model {
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'schools';
+    protected $table = 'photos';
 
-    public function photo() {
-        return $this->hasMany('App\Photo', 'school_id', 'id');
+    public function school() {
+        return $this->belongsTo('App\School', 'id', 'school_id');
     }
 }
