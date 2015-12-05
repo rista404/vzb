@@ -27,7 +27,22 @@ class School extends Model {
             $schools = self::storeSchoolsInCache();
         }
 
+
         return $schools;
+    }
+
+    public static function takeOne($id) {
+        if (Cache::has('schools')) {
+            $schools = Cache::get('schools');
+        }
+        else {
+            $schools = self::storeSchoolsInCache();
+        }
+
+        foreach ($schools as $school) {
+            if($school->id = $id)
+                return json_encode($school);
+        }
     }
 
     private static function storeSchoolsInCache() {
@@ -37,7 +52,7 @@ class School extends Model {
 
         $schools = json_decode($res->getBody());
 
-        $schools_from_db = self::where('id', 153)->with('photos')->get();
+        $schools_from_db = School::with('photos')->get();
 
         foreach ($schools as $key=>$school){
             foreach ($schools_from_db as $key_db=>$school_from_db){
@@ -59,11 +74,11 @@ class School extends Model {
         }
 
         //Store in cache for 7 days
-        $cached_schools = Cache::remember('schools', 10080, function() use ($schools) {
+        Cache::remember('schools', 10080, function() use ($schools) {
             return $schools;
         });
 
-        return $cached_schools;
+        return $schools;
     }
 
     private static function isInBelgrade($univerzitet, $naziv = "") {
