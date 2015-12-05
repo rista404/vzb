@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "node ./node_modules/concurrently/src/main.js --kill-others \"php artisan serve\" \"npm run dev-js\" \"npm run dev-sass\" \"npm run hot-reload\" ",
-    "hot-reload": "./node_modules/.bin/browser-sync start --proxy localhost:8000 --files 'public/js/*.js, public/css/*.css, resources/views/index.blade.php'",
+    "hot-reload": "./node_modules/.bin/browser-sync start --server --logLevel debug --files 'public/js/*.js, public/css/*.css, resources/views/index.blade.php'",
     "dev-js": "./node_modules/.bin/watchify -t vueify -e resources/assets/app/main.js -o public/js/app.js",
     "build-js": "NODE_ENV=production ./node_modules/.bin/browserify -t vueify -e resources/assets/app/main.js/main.js | uglifyjs -c warnings=false -m > public/js/app.js",
     "dev-sass": "./node_modules/.bin/node-sass -w -r -i --include-path ./node_modules/bourbon/app/assets/stylesheets --output-style expanded resources/assets/sass/app.sass public/css/app.css",

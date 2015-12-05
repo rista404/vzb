@@ -1,7 +1,11 @@
 <template lang="jade">
 	
-.Component
-	h1 Hello world
+.Profile
+	.Profile__Name
+		h3 Nikola Ristic
+	.Profile__Image
+		img(src="http://www.radfaces.com/images/avatars/eddie-gelfen.png") 
+
 
 </template>
 
@@ -23,8 +27,6 @@ export default {
 
 <style lang="sass">
 
-.Component
-	font-size: 24px
-	display: flex
+.Profile
 
 </style>

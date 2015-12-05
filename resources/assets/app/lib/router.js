@@ -8,13 +8,12 @@ var router = new VueRouter({
 });
 
 // Include Views
-var HelloWorld = require('../views/hello_world.vue');
 
 // Router paths
 router.map({
 
 	'/': {
-		component: HelloWorld
+		component: require('../views/Home_View.vue')
 	}
 
 });
