@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\School;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller {
 
@@ -29,10 +30,15 @@ class AdminController extends Controller {
             ->with("school", $school);
     }
 
-    public function editSchool($id) {
+    public function editSchool($id, Request $request) {
         $school = School::find($id);
 
+        $school->bus = $request->input('bus');
+
+        $school->save();
+
         return view("admin/edit_school")
-            ->with("school", $school);
+            ->with("school", $school)
+            ->with('success', "Izmena je sacuvana");
     }
 }
