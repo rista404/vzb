@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1311,7 +1312,38 @@ hr {
   }
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, blockquote, label, input, span {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.boldish {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-right {
+  text-align: right;
+}
+
+.ta-left {
+  text-align: left;
 }
