@@ -6,8 +6,11 @@
 	.Landing_Section
 		.container
 			.row
-				.col-sm-12.col-md-3.col-lg-2
+				.col-md-3.col-lg-2
 					side-menu
+				.View_Frame__holder.col-md-9.col-lg-10
+					.View_Frame
+						router-view
 
 </template>
 
@@ -40,8 +43,17 @@ export default {
 .Home_View
 
 	.Landing_Section
-		padding: 30px 0
+		position: relative
 		background-color: #21c3eb
+
+	.View_Frame__holder
+		padding-left: 0
+		padding-right: 0
+
+	.View_Frame
+		min-height: 650px
+		padding: 70px 40px
+		background-color: #31363c
 
 
 </style>

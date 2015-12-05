@@ -3,7 +3,7 @@
 .Side_Menu
 	.Side_Menu__Logo
 
-		h2.Side_Menu__Title 
+		a.Side_Menu__Title(v-link="{ path: '/' }")
 			|Vodic 
 			span za 
 			br
@@ -16,7 +16,7 @@
 
 		li.Side_Menu__Item
 			h3 
-				a(href="#") Fakulteti
+				a(v-link="{ path: '/fakulteti' }") Fakulteti
 
 		li.Side_Menu__Item
 			h3 
@@ -51,9 +51,11 @@ export default {
 <style lang="sass">
 
 .Side_Menu
-	padding: 40px 0
+	padding: 70px 0 40px 0
 	text-align: center
 	@media screen and (min-width: 992px)
+		padding: 70px 0
+		padding-right: 15px
 		text-align: right
 
 	.Side_Menu__Logo
@@ -62,9 +64,14 @@ export default {
 			vertical-align: middle
 			text-transform: uppercase
 			padding-right: 15px
+			font-size: 22px
 			line-height: 1
 			font-weight: 500
 			letter-spacing: 1px
+			color: #333
+
+			&:hover
+				color: #fdff56
 
 		.Side_Menu__Search
 			display: inline-block
@@ -89,6 +96,9 @@ export default {
 
 				a
 					color: #333
+
+					&.active
+						color: #fdff56
 
 
 

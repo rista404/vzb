@@ -13,8 +13,16 @@ var router = new VueRouter({
 router.map({
 
 	'/': {
-		component: require('../views/Home_View.vue')
-	}
+		component: require('../views/Home_View.vue'),
+
+		subRoutes: {
+			'/fakulteti': {
+				component: require('../components/Filter_Fakulteta.vue')
+			}
+		}
+	},
+
+	
 
 });
 
