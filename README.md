@@ -8,7 +8,11 @@ Create new database
 Create .env file from .env.example and update database details
 
 `composer install`
+
 `php artisan key:generate`
+
+`php artisan cache:clear`
+
 `npm install`
 
 # To start
