@@ -1,23 +1,26 @@
 <template lang="jade">
 	
-.Studije
-	list(:list="res")
+.Fakultet
+	img(src="/public/img/left.png")
+	h1.heading Fakultet
+	hr
+
 
 </template>
 
 
 <script>
 
-import List from '../components/List.vue';
-
 export default {
 
 	route: {
 		data(transition) {
 
-			var type = transition.to.params.type;
+			var id = transition.to.params.id;
 
-			var url = "http://localhost:8000/api/v1/schools/type/" + type;
+			var url = "http://localhost:8000/api/v1/schools/" + id;
+
+			console.log(url);
 
 			this.$http.get(url, function (res, status, request) {
 
@@ -33,10 +36,6 @@ export default {
 		};
 	},
 
-	components: {
-		"list": List
-	}
-
 }
 
 </script>
@@ -44,9 +43,6 @@ export default {
 
 <style lang="sass">
 
-.Studije
+.Fakultet
 
-
-pre
-	color: white
 </style>
