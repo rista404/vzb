@@ -1,0 +1,42 @@
+@-webkit-keyframes flash
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+
+@-moz-keyframes flash
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+
+@-ms-keyframes flash
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+
+@-o-keyframes flash
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+
+@keyframes flash
+  0%, 50%, 100%
+    opacity: 1
+  25%, 75%
+    opacity: 0
+
+
+=flash($duration, $delay, $function, $fill, $visibility)
+  +animation-name(flash)
+  +duration($duration)
+  +delay($delay)
+  +function($function)
+  +fill-mode($fill)
+  +visibility($visibility)

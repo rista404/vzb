@@ -79,11 +79,14 @@ export default {
 			cursor: pointer
 
 	.Side_Menu__Items
-		padding: 40px 0
+		padding: 20px 0
+
+		@media screen and (min-width: 768px)
+			padding: 40px 0
 		
 		.Side_Menu__Item
-			display: inline-block
-			padding: 0 10px
+			// display: inline-block
+			padding: 0 40px
 
 			@media screen and (min-width: 768px)
 				padding-bottom: 25px

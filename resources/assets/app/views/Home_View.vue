@@ -1,6 +1,6 @@
 <template lang="jade">
 	
-.Home_View
+.Home_View.fadeInDown
 	//- top-bar
 
 	.Landing_Section
@@ -33,6 +33,7 @@ export default {
 
 .Home_View
 	height: 100%
+	max-height: 100%
 	.Landing_Section
 		position: relative
 		height: 100%
@@ -63,6 +64,7 @@ export default {
 			float: left
 
 	.View_Frame
+		overflow-y: auto
 		height: 100%
 		min-height: 650px
 		padding: 70px 40px
