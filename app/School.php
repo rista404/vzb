@@ -109,7 +109,7 @@ class School extends Model {
     }
 
     public static function isInBelgrade($univerzitet, $naziv = "") {
-        if(strpos($univerzitet,'Beograd') !== false || ($univerzitet == "" && strpos($naziv,'Beograd') !== false)) {
+        if(strpos($univerzitet,'Београд') !== false || ($univerzitet == "" && strpos($naziv,'Београд') !== false)) {
             return true;
         }
 
