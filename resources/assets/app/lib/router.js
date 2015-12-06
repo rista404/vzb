@@ -17,12 +17,32 @@ router.map({
 
 		subRoutes: {
 
+			'/': {
+				component: require('../components/Landing.vue')
+			},
+
 			'/fakulteti': {
 				component: require('../components/Filter_Fakulteta.vue')
 			},
 
-			'studije/:type': {
+			'/studije/:type': {
 				component: require('../views/Studije.vue')
+			},
+
+			'/espb/:number': {
+				component: require('../views/Studije.vue')
+			},
+
+			'/domovi': {
+				component: require('../views/Domovi.vue')
+			},
+
+			'/menze': {
+				component: require('../views/Menze.vue')
+			},
+
+			'/zanimljivosti': {
+				component: require('../views/Zanimljivosti.vue')
 			}
 		}
 	},

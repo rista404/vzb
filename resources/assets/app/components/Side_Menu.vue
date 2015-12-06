@@ -20,15 +20,15 @@
 
 		li.Side_Menu__Item
 			h3 
-				a(href="#") Domovi
+				a(v-link="{ path: '/domovi' }") Domovi
 
 		li.Side_Menu__Item
 			h3 
-				a(href="#") Menze
+				a(v-link="{ path: '/menze' }") Menze
 
 		li.Side_Menu__Item
 			h3 
-				a(href="#") Zanimljivosti
+				a(v-link="{ path: '/zanimljivosti' }") Zanimljivosti
 
 </template>
 
@@ -53,7 +53,7 @@ export default {
 .Side_Menu
 	padding: 70px 0 40px 0
 	text-align: center
-	@media screen and (min-width: 992px)
+	@media screen and (min-width: 768px)
 		padding: 70px 0
 		padding-right: 15px
 		text-align: right
@@ -85,7 +85,7 @@ export default {
 			display: inline-block
 			padding: 0 10px
 
-			@media screen and (min-width: 992px)
+			@media screen and (min-width: 768px)
 				padding-bottom: 25px
 				display: inline
 
