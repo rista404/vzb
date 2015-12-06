@@ -2,6 +2,7 @@
 
 use App\Dorm;
 use App\Event;
+use App\Faq;
 use App\Organization;
 use App\School;
 use GuzzleHttp\Client;
@@ -116,5 +117,17 @@ class ApiController extends Controller {
         $event = Event::find($id);
 
         return $event;
+    }
+
+    public function getFaqs() {
+        $faqs = Faq::all();
+
+        return $faqs;
+    }
+
+    public function getFaq($id) {
+        $faq = Faq::find($id);
+
+        return $faq;
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Dorm;
 use App\Event;
+use App\Faq;
 use App\Organization;
 use App\Photo;
 use App\School;
@@ -239,5 +240,54 @@ class AdminController extends Controller {
         $event->delete();
 
         return redirect("admin/events")->with("success", "Dogadjaj je obrisan.");
+    }
+
+    // Faq functions
+    public function getFaqs() {
+        $faqs = Faq::all();
+
+        return view("admin/faqs")
+            ->with("faqs", $faqs);
+    }
+
+    public function getFaq($id) {
+        $faq = Faq::find($id);
+
+        return view("admin/edit_faq")
+            ->with("faq", $faq);
+    }
+
+    public function editFaq($id, Request $request) {
+        $faq = Faq::find($id);
+
+        $faq->title = $request->input('title');
+        $faq->description = $request->input('description');
+
+        $faq->save();
+
+        return redirect(url("admin/faq/".$faq->id))->with("success", "Pitanje je izmenjeno.");
+    }
+
+    public function addFaq() {
+        return view("admin/add_faq");
+    }
+
+    public function saveFaq(Request $request) {
+        $faq = new Faq;
+
+        $faq->title = $request->input('title');
+        $faq->description = $request->input('description');
+
+        $faq->save();
+
+        return redirect("admin/faqs")->with("success", "Pitanje je sacuvano.");
+    }
+
+    public function deleteFaq($id) {
+        $faq = Faq::find($id);
+
+        $faq->delete();
+
+        return redirect("admin/faqs")->with("success", "Pitanje je obrisano.");
     }
 }

@@ -17,13 +17,13 @@ Route::get('/', function () {
 
 // Admin routes
 Route::group(['prefix' => 'admin'], function() {
+    //Default admin
+    Route::get('/', 'AdminController@index');
+
     //Login
     Route::get('login', 'Auth\AuthController@getLogin');
     Route::post('login', 'Auth\AuthController@postLogin');
     Route::get('logout', 'Auth\AuthController@getLogout');
-
-    //Default admin
-    Route::get('/', 'AdminController@index');
 
     //Schools
     Route::get('schools', 'AdminController@getSchools');
@@ -54,6 +54,14 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('event/{id}', 'AdminController@getEvent');
     Route::post('event/{id}', 'AdminController@editEvent');
     Route::get('event/delete/{id}', 'AdminController@deleteEvent');
+
+    //FAQ
+    Route::get('faqs', 'AdminController@getFaqs');
+    Route::get('faq/add', 'AdminController@addFaq');
+    Route::post('faq/add', 'AdminController@saveFaq');
+    Route::get('faq/{id}', 'AdminController@getFaq');
+    Route::post('faq/{id}', 'AdminController@editFaq');
+    Route::get('faq/delete/{id}', 'AdminController@deleteFaq');
 });
 
 //API v1 routes
@@ -77,5 +85,9 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function() {
     //Events
     Route::any('events', 'ApiController@getEvents');
     Route::any('events/{id}', 'ApiController@getEvent');
+
+    //Events
+    Route::any('faq', 'ApiController@getFaqs');
+    Route::any('faq/{id}', 'ApiController@getFaq');
 });
 

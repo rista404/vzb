@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.19-0ubuntu0.14.04.1)
 # Database: vzb
-# Generation Time: 2015-12-06 11:56:06 +0000
+# Generation Time: 2015-12-06 12:30:20 +0000
 # ************************************************************
 
 
@@ -75,6 +75,31 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table faqs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `faqs`;
+
+CREATE TABLE `faqs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES `faqs` WRITE;
+/*!40000 ALTER TABLE `faqs` DISABLE KEYS */;
+
+INSERT INTO `faqs` (`id`, `title`, `description`, `created_at`, `updated_at`)
+VALUES
+	(1,'Test','<p>Test123</p>\r\n','2015-12-06 12:28:43','2015-12-06 12:30:00');
+
+/*!40000 ALTER TABLE `faqs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 # Dump of table migrations
 # ------------------------------------------------------------
 
@@ -98,7 +123,8 @@ VALUES
 	('2015_12_04_212854_add_name_to_schools_table',5),
 	('2015_12_05_122520_create_dorms_table',6),
 	('2015_12_05_140422_create_organizations_table',7),
-	('2015_12_06_085847_create_events_table',8);
+	('2015_12_06_085847_create_events_table',8),
+	('2015_12_06_120357_create_faq_table',9);
 
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
