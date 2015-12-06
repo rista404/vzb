@@ -21,7 +21,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Naslov</th>
-                            <th>Tekst</th>
                             <th>Akcija</th>
                         </tr>
                     </thead>
@@ -30,7 +29,6 @@
                         <tr>
                             <td>{{$faq->id}}</td>
                             <td>{{$faq->title}}</td>
-                            <td>{{$faq->text}}</td>
                             <td><a class="btn btn-success" href="{{url('admin/faq/')}}/{{$faq->id}}">Izmeni</a> <a class="btn btn-danger" href="{{url('admin/faq/delete/')}}/{{$faq->id}}">Obrisi</a></td>
                         </tr>
                     @endforeach
