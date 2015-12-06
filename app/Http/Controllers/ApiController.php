@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Dorm;
+use App\Event;
 use App\Organization;
 use App\School;
 use GuzzleHttp\Client;
@@ -94,14 +95,26 @@ class ApiController extends Controller {
     }
 
     public function getOrganizations() {
-        $dorms = Organization::all();
+        $organizations = Organization::all();
 
-        return $dorms;
+        return $organizations;
     }
 
     public function getOrganization($id) {
-        $dorm = Organization::find($id);
+        $organization = Organization::find($id);
 
-        return $dorm;
+        return $organization;
+    }
+
+    public function getEvents() {
+        $events = Event::all();
+
+        return $events;
+    }
+
+    public function getEvent($id) {
+        $event = Event::find($id);
+
+        return $event;
     }
 }

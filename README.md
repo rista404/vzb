@@ -44,3 +44,7 @@ Create .env file from .env.example and update database details
 /api/v1/organizations - Get all organizations
 
 /api/v1/organizations/{id} - Get organization per ID
+
+/api/v1/events - Get all events
+
+/api/v1/events/{id} - Get event per ID
