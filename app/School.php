@@ -29,7 +29,7 @@ class School extends Model {
         $schools = self::getCached();
 
         foreach ($schools as $school) {
-            if($school->id = $id)
+            if($school->id == $id)
                 return json_encode($school);
         }
     }
