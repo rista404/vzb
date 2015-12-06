@@ -30,19 +30,19 @@ class ApiController extends Controller {
             $tip = "";
             switch($type) {
                 case 'umetnost':
-                    $tip = "Уметност";
+                    $tip = "Umetnost";
                     break;
                 case 'tehnicke':
-                    $tip = "Техничко-технолошке науке";
+                    $tip = "Tehničko-tehnološke nauke";
                     break;
                 case 'prirodne':
-                    $tip = "Природно-математичке науке";
+                    $tip = "Prirodno-matematičke nauke";
                     break;
                 case 'drustvene':
-                    $tip = "Друштвено-хуманистичке науке";
+                    $tip = "Društveno-humanističke nauke";
                     break;
                 case 'medicinske':
-                    $tip = "Медицинске науке";
+                    $tip = "Medicinske nauke";
                     break;
             }
 
@@ -51,7 +51,7 @@ class ApiController extends Controller {
             }
 
             foreach($schools as $key => $school) {
-                if($type = "drustvene" && $school->id = '9') {
+                if($type == "drustvene" && $school->id == '9') {
                     continue;
                 }
 
