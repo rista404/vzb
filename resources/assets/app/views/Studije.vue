@@ -21,6 +21,8 @@ export default {
 
 			var url = "http://localhost:8000/api/v1/schools/type/" + type;
 
+			console.log(url);
+
 			this.$http.get(url, function (res, status, request) {
 
 				console.log(res);

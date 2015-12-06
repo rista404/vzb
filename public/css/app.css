@@ -1325,6 +1325,14 @@ hr {
   cursor: pointer;
 }
 
+html, body {
+  height: 100%;
+}
+
+main#app {
+  height: 100%;
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif;
 }

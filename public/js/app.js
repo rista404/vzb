@@ -13268,7 +13268,7 @@ Vue.use(VueResource);
 
 var Router = require('./lib/router.js');
 },{"./lib/router.js":19,"vue":12,"vue-resource":4,"vue-router":11}],21:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".Home_View .Landing_Section {\n  position: relative;\n  background-color: #21c3eb; }\n\n.Home_View .View_Frame__holder {\n  padding-left: 0;\n  padding-right: 0; }\n\n.Home_View .View_Frame {\n  min-height: 650px;\n  padding: 70px 40px;\n  background-color: #31363c; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert(".Home_View {\n  height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .View_Frame__holder {\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  .Home_View .View_Frame {\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n")
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13294,14 +13294,14 @@ exports.default = {
 
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><top-bar></top-bar><div class=\"Landing_Section\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-3 col-lg-2\"><side-menu></side-menu></div><div class=\"View_Frame__holder col-md-9 col-lg-10\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><div class=\"Landing_Section\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-3 col-lg-2\"><side-menu></side-menu></div><div class=\"View_Frame__holder col-md-9 col-lg-10\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Home_View.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".Home_View .Landing_Section {\n  position: relative;\n  background-color: #21c3eb; }\n\n.Home_View .View_Frame__holder {\n  padding-left: 0;\n  padding-right: 0; }\n\n.Home_View .View_Frame {\n  min-height: 650px;\n  padding: 70px 40px;\n  background-color: #31363c; }\n"] = false
+    require("vueify-insert-css").cache[".Home_View {\n  height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .View_Frame__holder {\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  .Home_View .View_Frame {\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -13332,6 +13332,8 @@ exports.default = {
 			var type = transition.to.params.type;
 
 			var url = "http://localhost:8000/api/v1/schools/type/" + type;
+
+			console.log(url);
 
 			this.$http.get(url, function (res, status, request) {
 
