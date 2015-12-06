@@ -13081,7 +13081,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Pronadji fakultet:</h2><hr/><div class=\"row\"><div class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"{ path='/' }\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"{ path='/' }\">180</a></h2><h2><a v-link=\"{ path='/' }\">240</a></h2><h2><a v-link=\"{ path='/' }\">300</a></h2><h2><a v-link=\"{ path='/' }\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"{ path='/' }\">Umetnost</a></h2><h2><a v-link=\"{ path='/' }\">Tehnicke</a></h2><h2><a v-link=\"{ path='/' }\">Prirodne</a></h2><h2><a v-link=\"{ path='/' }\">Drustvene</a></h2><h2><a v-link=\"{ path='/' }\">Medicinske</a></h2></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Pronadji fakultet:</h2><hr/><div class=\"row\"><div class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"{ path='/studije/strukovne' }\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"{ path='/' }\">180</a></h2><h2><a v-link=\"{ path='/' }\">240</a></h2><h2><a v-link=\"{ path='/' }\">300</a></h2><h2><a v-link=\"{ path='/' }\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"{ path='/studije/umetnost' }\">Umetnost</a></h2><h2><a v-link=\"{ path='/studije/tehnicke' }\">Tehnicke</a></h2><h2><a v-link=\"{ path='/studije/prirodne' }\">Prirodne</a></h2><h2><a v-link=\"{ path='/studije/drustvene' }\">Drustvene</a></h2><h2><a v-link=\"{ path='/studije/medicinske' }\">Medicinske</a></h2></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13098,6 +13098,30 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],15:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+
+	props: ['list']
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><div v-for=\"single in list\" class=\"Single col-md-6\"><h1>{{ single.nazivu }}</h1><h3>{{ single.adresa }}</h3></div></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/components/List.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":12,"vue-hot-reload-api":2}],16:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Profile .Profile__Name {\n  display: inline-block;\n  vertical-align: middle;\n  padding-right: 20px; }\n  .Profile .Profile__Name h3 {\n    font-size: 22px;\n    font-weight: 500;\n    line-height: 80px; }\n\n.Profile .Profile__Image {\n  display: inline-block;\n  vertical-align: middle; }\n  .Profile .Profile__Image img {\n    border: 2px solid #21c3eb;\n    border-radius: 21px;\n    width: 42px;\n    cursor: pointer; }\n")
 "use strict";
 
@@ -13126,7 +13150,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],16:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],17:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Side_Menu {\n  padding: 70px 0 40px 0;\n  text-align: center; }\n  @media screen and (min-width: 992px) {\n    .Side_Menu {\n      padding: 70px 0;\n      padding-right: 15px;\n      text-align: right; } }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Title {\n    display: inline-block;\n    vertical-align: middle;\n    text-transform: uppercase;\n    padding-right: 15px;\n    font-size: 22px;\n    line-height: 1;\n    font-weight: 500;\n    letter-spacing: 1px;\n    color: #333; }\n    .Side_Menu .Side_Menu__Logo .Side_Menu__Title:hover {\n      color: #fdff56; }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Search {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer; }\n  .Side_Menu .Side_Menu__Items {\n    padding: 40px 0; }\n    .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n      display: inline-block;\n      padding: 0 10px; }\n      @media screen and (min-width: 992px) {\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n          padding-bottom: 25px;\n          display: inline; } }\n      .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 {\n        font-size: 22px;\n        font-weight: 400; }\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a {\n          color: #333; }\n          .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a.active {\n            color: #fdff56; }\n")
 "use strict";
 
@@ -13155,7 +13179,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],17:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],18:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n  display: inline-block;\n  padding-right: 20px; }\n  @media screen and (min-width: 768px) {\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n      padding-right: 35px; } }\n  .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 {\n    line-height: 80px;\n    font-weight: 400;\n    font-size: 20px; }\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a, .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a:hover {\n      color: #333; }\n")
 'use strict';
 
@@ -13196,7 +13220,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"./Profile.vue":15,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],18:[function(require,module,exports){
+},{"./Profile.vue":16,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],19:[function(require,module,exports){
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 
@@ -13215,8 +13239,13 @@ router.map({
 		component: require('../views/Home_View.vue'),
 
 		subRoutes: {
+
 			'/fakulteti': {
 				component: require('../components/Filter_Fakulteta.vue')
+			},
+
+			'studije/:type': {
+				component: require('../views/Studije.vue')
 			}
 		}
 	},
@@ -13231,14 +13260,14 @@ var App = Vue.extend({});
 // Fire up the router
 router.start(App, '#app');
 
-},{"../components/Filter_Fakulteta.vue":14,"../views/Home_View.vue":20,"vue":12,"vue-router":11}],19:[function(require,module,exports){
+},{"../components/Filter_Fakulteta.vue":14,"../views/Home_View.vue":21,"../views/Studije.vue":22,"vue":12,"vue-router":11}],20:[function(require,module,exports){
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
 Vue.use(VueResource);
 
 var Router = require('./lib/router.js');
-},{"./lib/router.js":18,"vue":12,"vue-resource":4,"vue-router":11}],20:[function(require,module,exports){
+},{"./lib/router.js":19,"vue":12,"vue-resource":4,"vue-router":11}],21:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Home_View .Landing_Section {\n  position: relative;\n  background-color: #21c3eb; }\n\n.Home_View .View_Frame__holder {\n  padding-left: 0;\n  padding-right: 0; }\n\n.Home_View .View_Frame {\n  min-height: 650px;\n  padding: 70px 40px;\n  background-color: #31363c; }\n")
 'use strict';
 
@@ -13254,41 +13283,18 @@ var _Side_Menu = require('../components/Side_Menu.vue');
 
 var _Side_Menu2 = _interopRequireDefault(_Side_Menu);
 
-var _List = require('./List.vue');
-
-var _List2 = _interopRequireDefault(_List);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
 
-	route: {
-		data: function data(transition) {
-
-			var url = "http://localhost:8000/api/v1/schools";
-
-			this.$http.get(url, function (res, status, request) {
-
-				transition.next({ res: res });
-			});
-		}
-	},
-
-	data: function data() {
-		return {
-			res: {}
-		};
-	},
-
 	components: {
 		"top-bar": _Top_Bar2.default,
-		"side-menu": _Side_Menu2.default,
-		"list": _List2.default
+		"side-menu": _Side_Menu2.default
 	}
 
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><top-bar></top-bar><div class=\"Landing_Section\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-3 col-lg-2\"><side-menu></side-menu></div><div class=\"View_Frame__holder col-md-9 col-lg-10\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div></div><pre><list list=\"{{ res }}\"></list>{{ $data | json }}</pre></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><top-bar></top-bar><div class=\"Landing_Section\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-3 col-lg-2\"><side-menu></side-menu></div><div class=\"View_Frame__holder col-md-9 col-lg-10\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13304,33 +13310,64 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../components/Side_Menu.vue":16,"../components/Top_Bar.vue":17,"./List.vue":21,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],21:[function(require,module,exports){
-'use strict';
+},{"../components/Side_Menu.vue":17,"../components/Top_Bar.vue":18,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],22:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("pre {\n  color: white; }\n")
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+
+var _List = require("../components/List.vue");
+
+var _List2 = _interopRequireDefault(_List);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
 
-	props: ['list'],
+	route: {
+		data: function data(transition) {
+
+			var type = transition.to.params.type;
+
+			var url = "http://localhost:8000/api/v1/schools/type/" + type;
+
+			this.$http.get(url, function (res, status, request) {
+
+				console.log(res);
+
+				transition.next({ res: res });
+			});
+		}
+	},
 
 	data: function data() {
 		return {
 			res: {}
 		};
+	},
+
+	components: {
+		"list": _List2.default
 	}
+
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><div v-for=\"single in list\" class=\"Single col-md-6\"><h1>{{ single.nazivu }}</h1><h3>{{ single.adresa }}</h3></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Studije\"><list list=\"{{ res }}\"></list><pre>{{ $data | json }}</pre></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/rista/Projects/vzb/resources/assets/app/views/List.vue"
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Studije.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["pre {\n  color: white; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}]},{},[19]);
+},{"../components/List.vue":15,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}]},{},[20]);

@@ -11,10 +11,6 @@
 				.View_Frame__holder.col-md-9.col-lg-10
 					.View_Frame
 						router-view
-	pre
-		list(list="{{ res }}")
-		{{ $data | json }}
-
 </template>
 
 
@@ -22,33 +18,12 @@
 
 import TopBar from '../components/Top_Bar.vue';
 import SideMenu from '../components/Side_Menu.vue';
-import List from './List.vue';
 
 export default {
 
-	route: {
-		data(transition) {
-
-			var url = "http://localhost:8000/api/v1/schools";
-
-			this.$http.get(url, function (res, status, request) {
-
-				transition.next({res: res});
-
-			});
-		}
-	},
-
-	data() {
-		return {
-			res: {}
-		};
-	},
-
 	components: {
 		"top-bar": TopBar,
-		"side-menu": SideMenu,
-		"list": List
+		"side-menu": SideMenu
 	}
 
 }

@@ -16,8 +16,13 @@ router.map({
 		component: require('../views/Home_View.vue'),
 
 		subRoutes: {
+
 			'/fakulteti': {
 				component: require('../components/Filter_Fakulteta.vue')
+			},
+
+			'studije/:type': {
+				component: require('../views/Studije.vue')
 			}
 		}
 	},

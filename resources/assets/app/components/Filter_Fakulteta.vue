@@ -8,7 +8,7 @@
 			h2.head Studije
 			hr
 			h2
-				a(v-link="{ path='/' }") Strukovne
+				a(v-link="{ path='/studije/strukovne' }") Strukovne
 			h2
 				a.clickable(@click="showMore = ! showMore") Akademske
 			h2.head ESPB
@@ -26,15 +26,15 @@
 			h2.head Akademske
 			hr
 			h2
-				a(v-link="{ path='/' }") Umetnost
+				a(v-link="{ path='/studije/umetnost' }") Umetnost
 			h2
-				a(v-link="{ path='/' }") Tehnicke
+				a(v-link="{ path='/studije/tehnicke' }") Tehnicke
 			h2
-				a(v-link="{ path='/' }") Prirodne
+				a(v-link="{ path='/studije/prirodne' }") Prirodne
 			h2
-				a(v-link="{ path='/' }") Drustvene
+				a(v-link="{ path='/studije/drustvene' }") Drustvene
 			h2
-				a(v-link="{ path='/' }") Medicinske
+				a(v-link="{ path='/studije/medicinske' }") Medicinske
 			//- h2
 				//- a(v-link="{ path='/' }") Vojne
 
