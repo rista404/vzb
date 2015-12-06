@@ -80,7 +80,7 @@ class ApiController extends Controller {
     public function getSchool($id) {
         $school = School::takeOne($id);
 
-        return array_values($school);
+        return $school;
     }
 
     public function getDorms() {
