@@ -13081,7 +13081,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Pronadji fakultet:</h2><hr/><div class=\"row\"><div class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"{ path:'studije/', params: { type: 'strukovne'} }\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"{ path:'espb/', params: { type: '180'} }\">180</a></h2><h2><a v-link=\"{ path:'espb/', params: { type: '240'} }\">240</a></h2><h2><a v-link=\"{ path:'espb/', params: { type: '300'} }\">300</a></h2><h2><a v-link=\"{ path:'espb/', params: { type: '360'} }\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"{ path:'studije/', params: { type: 'umetnost'} }\">Umetnost</a></h2><h2><a v-link=\"{ path:'studije/', params: { type: 'tehnicke'} }\">Tehnicke</a></h2><h2><a v-link=\"{ path:'studije/', params: { type: 'prirodne'} }\">Prirodne</a></h2><h2><a v-link=\"{ path:'studije/', params: { type: 'drustvene'} }\">Drustvene</a></h2><h2><a v-link=\"{ path:'studije/', params: { type: 'medicinske'} }\">Medicinske</a></h2></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Pronadji fakultet:</h2><hr/><div class=\"row\"><div class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"'studije/strukovne'\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"'/espb/180'\">180</a></h2><h2><a v-link=\"'/espb/240'\">240</a></h2><h2><a v-link=\"'/espb/300'\">300</a></h2><h2><a v-link=\"'/espb/360'\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"'studije/umetnost'\">Umetnost</a></h2><h2><a v-link=\"'studije/tehnicke'\">Tehnicke</a></h2><h2><a v-link=\"'studije/prirodne'\">Prirodne</a></h2><h2><a v-link=\"'studije/drustvene'\">Drustvene</a></h2><h2><a v-link=\"'studije/medicinske'\">Medicinske</a></h2></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13134,6 +13134,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./Tips.vue":19,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],16:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n")
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13141,23 +13142,30 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
 
-	props: ['list']
+	props: ['list'],
 
+	data: function data() {
+		return;
+	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><div v-for=\"single in list\" class=\"Single col-md-6\"><h1>{{ single.nazivu }}</h1><h3>{{ single.adresa }}</h3></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><h1 class=\"heading\">{{ $route.params.type }}</h1><hr/><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-10\"><h1> <a href=\"#!/fakultet/{{single.id}}\">{{ single.nazivu }}</a></h1><h3> \n{{ single.adresa }}</h3></div><div class=\"Single__Go col-xs-1\"><img src=\"/public/img/right.png\"/></div></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/components/List.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}],17:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],17:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Profile .Profile__Name {\n  display: inline-block;\n  vertical-align: middle;\n  padding-right: 20px; }\n  .Profile .Profile__Name h3 {\n    font-size: 22px;\n    font-weight: 500;\n    line-height: 80px; }\n\n.Profile .Profile__Image {\n  display: inline-block;\n  vertical-align: middle; }\n  .Profile .Profile__Image img {\n    border: 2px solid #21c3eb;\n    border-radius: 21px;\n    width: 42px;\n    cursor: pointer; }\n")
 "use strict";
 
@@ -13308,12 +13316,16 @@ router.map({
 				component: require('../components/Filter_Fakulteta.vue')
 			},
 
+			'/fakultet/:id': {
+				component: require('../views/Fakultet.vue')
+			},
+
 			'/studije/:type': {
 				component: require('../views/Studije.vue')
 			},
 
 			'/espb/:number': {
-				component: require('../views/Studije.vue')
+				component: require('../views/Espb.vue')
 			},
 
 			'/domovi': {
@@ -13340,7 +13352,7 @@ var App = Vue.extend({});
 // Fire up the router
 router.start(App, '#app');
 
-},{"../components/Filter_Fakulteta.vue":14,"../components/Landing.vue":15,"../views/Domovi.vue":23,"../views/Home_View.vue":24,"../views/Menze.vue":25,"../views/Studije.vue":26,"../views/Zanimljivosti.vue":27,"vue":12,"vue-router":11}],22:[function(require,module,exports){
+},{"../components/Filter_Fakulteta.vue":14,"../components/Landing.vue":15,"../views/Domovi.vue":23,"../views/Espb.vue":24,"../views/Fakultet.vue":25,"../views/Home_View.vue":26,"../views/Menze.vue":27,"../views/Studije.vue":28,"../views/Zanimljivosti.vue":29,"vue":12,"vue-router":11}],22:[function(require,module,exports){
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
@@ -13372,6 +13384,103 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":12,"vue-hot-reload-api":2}],24:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _List = require("../components/List.vue");
+
+var _List2 = _interopRequireDefault(_List);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+	route: {
+		data: function data(transition) {
+
+			var points = transition.to.params.number;
+
+			var url = "http://localhost:8000/api/v1/schools/espb/" + points;
+
+			console.log(url);
+
+			this.$http.get(url, function (res, status, request) {
+
+				transition.next({ res: res });
+			});
+		}
+	},
+
+	data: function data() {
+		return {
+			res: {}
+		};
+	},
+
+	components: {
+		"list": _List2.default
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Espb\"><list :list=\"res\"></list></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Espb.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2}],25:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+
+	route: {
+		data: function data(transition) {
+
+			var id = transition.to.params.id;
+
+			var url = "http://localhost:8000/api/v1/schools/" + id;
+
+			console.log(url);
+
+			this.$http.get(url, function (res, status, request) {
+
+				transition.next({ res: res });
+			});
+		}
+	},
+
+	data: function data() {
+		return {
+			res: {}
+		};
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Fakultet\"><img src=\"/public/img/left.png\"/><h1 class=\"heading\">Fakultet</h1><hr/></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Fakultet.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":12,"vue-hot-reload-api":2}],26:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Home_View {\n  height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .Side_Menu_Holder {\n    width: 100%; }\n  .Home_View .View_Frame__holder {\n    width: 100%;\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  @media screen and (min-width: 768px) {\n    .Home_View .Side_Menu_Holder {\n      width: 30%;\n      float: left; }\n    .Home_View .View_Frame__holder {\n      width: 70%;\n      float: left; } }\n  .Home_View .View_Frame {\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n  .Home_View h1 {\n    color: white;\n    font-weight: 300; }\n")
 'use strict';
 
@@ -13414,7 +13523,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../components/Side_Menu.vue":18,"../components/Top_Bar.vue":20,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],25:[function(require,module,exports){
+},{"../components/Side_Menu.vue":18,"../components/Top_Bar.vue":20,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],27:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13438,7 +13547,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}],26:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2}],28:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("pre {\n  color: white; }\n")
 "use strict";
 
@@ -13461,11 +13570,7 @@ exports.default = {
 
 			var url = "http://localhost:8000/api/v1/schools/type/" + type;
 
-			console.log(url);
-
 			this.$http.get(url, function (res, status, request) {
-
-				console.log(res);
 
 				transition.next({ res: res });
 			});
@@ -13484,7 +13589,7 @@ exports.default = {
 
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Studije\"><list list=\"{{ res }}\"></list><pre>{{ $data | json }}</pre></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Studije\"><list :list=\"res\"></list></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13500,7 +13605,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],27:[function(require,module,exports){
+},{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],29:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

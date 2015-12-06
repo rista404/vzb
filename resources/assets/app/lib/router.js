@@ -25,12 +25,16 @@ router.map({
 				component: require('../components/Filter_Fakulteta.vue')
 			},
 
+			'/fakultet/:id': {
+				component: require('../views/Fakultet.vue')
+			},
+
 			'/studije/:type': {
 				component: require('../views/Studije.vue')
 			},
 
 			'/espb/:number': {
-				component: require('../views/Studije.vue')
+				component: require('../views/Espb.vue')
 			},
 
 			'/domovi': {

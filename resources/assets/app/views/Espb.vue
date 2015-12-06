@@ -1,6 +1,6 @@
 <template lang="jade">
 	
-.Studije
+.Espb
 	list(:list="res")
 
 </template>
@@ -15,9 +15,11 @@ export default {
 	route: {
 		data(transition) {
 
-			var type = transition.to.params.type;
+			var points = transition.to.params.number;
 
-			var url = "http://localhost:8000/api/v1/schools/type/" + type;
+			var url = "http://localhost:8000/api/v1/schools/espb/" + points;
+
+			console.log(url);
 
 			this.$http.get(url, function (res, status, request) {
 
@@ -36,7 +38,6 @@ export default {
 	components: {
 		"list": List
 	}
-
 }
 
 </script>
@@ -44,9 +45,6 @@ export default {
 
 <style lang="sass">
 
-.Studije
+.Espb
 
-
-pre
-	color: white
 </style>
