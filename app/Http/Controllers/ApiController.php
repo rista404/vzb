@@ -14,7 +14,7 @@ class ApiController extends Controller {
     public function getSchools() {
         $schools = School::takeAll();
 
-        return $schools;
+        return array_values($schools);
     }
 
     public function getSchoolByType($type) {
@@ -62,7 +62,7 @@ class ApiController extends Controller {
             }
         }
 
-        return $schools;
+        return array_values($schools);
     }
 
     public function getSchoolByEspb($espb) {
@@ -74,13 +74,13 @@ class ApiController extends Controller {
             }
         }
 
-        return $schools;
+        return array_values($schools);
     }
 
     public function getSchool($id) {
         $school = School::takeOne($id);
 
-        return $school;
+        return array_values($school);
     }
 
     public function getDorms() {
