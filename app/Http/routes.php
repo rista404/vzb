@@ -41,6 +41,13 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('organization/{id}', 'AdminController@getOrganization');
     Route::post('organization/{id}', 'AdminController@editOrganization');
     Route::get('organization/delete/{id}', 'AdminController@deleteOrganization');
+
+    Route::get('events', 'AdminController@getEvents');
+    Route::get('event/add', 'AdminController@addEvent');
+    Route::post('event/add', 'AdminController@saveEvent');
+    Route::get('event/{id}', 'AdminController@getEvent');
+    Route::post('event/{id}', 'AdminController@editEvent');
+    Route::get('event/delete/{id}', 'AdminController@deleteEvent');
 });
 
 //API v1 routes

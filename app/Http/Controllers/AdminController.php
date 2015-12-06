@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Dorm;
+use App\Event;
 use App\Organization;
 use App\Photo;
 use App\School;
@@ -10,6 +11,7 @@ use Validator;
 use Redirect;
 use Session;
 use File;
+use Auth;
 
 class AdminController extends Controller {
 
@@ -24,6 +26,7 @@ class AdminController extends Controller {
         return redirect("admin/schools");
     }
 
+    //School Functions
     public function getSchools() {
         $schools = School::all();
 
@@ -75,6 +78,7 @@ class AdminController extends Controller {
         return redirect(url('admin/school/'.$photo->school_id))->with('success', 'Slika je obrisana');;
     }
 
+    // Dorms functions
     public function getDorms() {
         $dorms = Dorm::all();
 
@@ -125,6 +129,7 @@ class AdminController extends Controller {
         return redirect("admin/dorms")->with("success", "Dom je obrisan.");
     }
 
+    // Organizations functions
     public function getOrganizations() {
         $organizations = Organization::all();
 
@@ -148,7 +153,7 @@ class AdminController extends Controller {
 
         $organization->save();
 
-        return redirect(url("admin/organization/".$organization->id))->with("success", "Organizacija je izmenjen.");
+        return redirect(url("admin/organization/".$organization->id))->with("success", "Organizacija je izmenjena.");
     }
 
     public function addOrganization() {
@@ -173,5 +178,64 @@ class AdminController extends Controller {
         $organization->delete();
 
         return redirect("admin/organizations")->with("success", "Organizacija je obrisana.");
+    }
+
+    // Events functions
+    public function getEvents() {
+        $events = Event::all();
+
+        return view("admin/events")
+            ->with("events", $events);
+    }
+
+    public function getEvent($id) {
+        $event = Event::find($id);
+
+        return view("admin/edit_event")
+            ->with("event", $event);
+    }
+
+    public function editEvent($id, Request $request) {
+        $event = Event::find($id);
+
+        $user = Auth::user();
+
+        $event->name = $request->input('name');
+        $event->user_id = $user->id;
+        $event->time_date = $request->input('time_date');
+        $event->location = $request->input('location');
+        $event->description = $request->input('description');
+
+        $event->save();
+
+        return redirect(url("admin/event/".$event->id))->with("success", "Dogadjaj je izmenjen.");
+    }
+
+    public function addEvent() {
+        return view("admin/add_event");
+    }
+
+    public function saveEvent(Request $request) {
+        $event = new Event;
+
+        $user = Auth::user();
+
+        $event->name = $request->input('name');
+        $event->user_id = $user->id;
+        $event->time_date = $request->input('time_date');
+        $event->location = $request->input('location');
+        $event->description = $request->input('description');
+
+        $event->save();
+
+        return redirect("admin/events")->with("success", "Dogadjaj je sacuvan.");
+    }
+
+    public function deleteEvent($id) {
+        $event = Event::find($id);
+
+        $event->delete();
+
+        return redirect("admin/events")->with("success", "Dogadjaj je obrisan.");
     }
 }
