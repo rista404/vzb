@@ -1,6 +1,8 @@
 <template lang="jade">
 	
 .List
+	a(href="#!/fakulteti")
+		img(src="/public/img/left.png")
 	h1.heading {{ $route.params.type }}
 	hr
 	.Single.col-md-6(v-for="single in list")
@@ -34,6 +36,13 @@ export default {
 <style lang="sass">
 
 .List
+
+	.heading
+		display: inline-block
+		color: #fdff56
+		margin: 0 0 0 20px
+		vertical-align: middle
+
 	.Single
 		padding-bottom: 50px
 		height: 180px

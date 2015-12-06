@@ -1,8 +1,11 @@
 <template lang="jade">
 	
 .Fakultet
-	img(src="/public/img/left.png")
-	h1.heading Fakultet
+	a(href="#!/fakulteti")
+		img(src="/public/img/left.png")
+	h1.heading {{ res.nazivu }}
+	a(href="#!/fakulteti").close
+		img(src="/public/img/close.png")
 	hr
 
 
@@ -44,5 +47,13 @@ export default {
 <style lang="sass">
 
 .Fakultet
+	.heading
+		display: inline-block
+		color: #fdff56
+		margin: 0 0 0 20px
+		vertical-align: middle
+
+	.close
+		float: right
 
 </style>

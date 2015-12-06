@@ -13134,7 +13134,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./Tips.vue":19,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],16:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert(".List .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n")
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13149,14 +13149,14 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><h1 class=\"heading\">{{ $route.params.type }}</h1><hr/><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-10\"><h1> <a href=\"#!/fakultet/{{single.id}}\">{{ single.nazivu }}</a></h1><h3> \n{{ single.adresa }}</h3></div><div class=\"Single__Go col-xs-1\"><img src=\"/public/img/right.png\"/></div></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><a href=\"#!/fakulteti\"><img src=\"/public/img/left.png\"/></a><h1 class=\"heading\">{{ $route.params.type }}</h1><hr/><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-10\"><h1> <a href=\"#!/fakultet/{{single.id}}\">{{ single.nazivu }}</a></h1><h3> \n{{ single.adresa }}</h3></div><div class=\"Single__Go col-xs-1\"><img src=\"/public/img/right.png\"/></div></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/components/List.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n"] = false
+    require("vueify-insert-css").cache[".List .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -13438,6 +13438,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2}],25:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Fakultet .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.Fakultet .close {\n  float: right; }\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13468,19 +13469,23 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Fakultet\"><img src=\"/public/img/left.png\"/><h1 class=\"heading\">Fakultet</h1><hr/></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Fakultet\"><a href=\"#!/fakulteti\"><img src=\"/public/img/left.png\"/></a><h1 class=\"heading\">{{ res.nazivu }}</h1><a href=\"#!/fakulteti\" class=\"close\"><img src=\"/public/img/close.png\"/></a><hr/></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Fakultet.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".Fakultet .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.Fakultet .close {\n  float: right; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}],26:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],26:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Home_View {\n  height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .Side_Menu_Holder {\n    width: 100%; }\n  .Home_View .View_Frame__holder {\n    width: 100%;\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  @media screen and (min-width: 768px) {\n    .Home_View .Side_Menu_Holder {\n      width: 30%;\n      float: left; }\n    .Home_View .View_Frame__holder {\n      width: 70%;\n      float: left; } }\n  .Home_View .View_Frame {\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n  .Home_View h1 {\n    color: white;\n    font-weight: 300; }\n")
 'use strict';
 
