@@ -8,33 +8,33 @@
 			h2.head Studije
 			hr
 			h2
-				a(v-link="{ path='/studije/strukovne' }") Strukovne
+				a(v-link="{ path:'studije/', params: { type: 'strukovne'} }") Strukovne
 			h2
 				a.clickable(@click="showMore = ! showMore") Akademske
 			h2.head ESPB
 			hr
 			h2
-				a(v-link="{ path='/' }") 180
+				a(v-link="{ path:'espb/', params: { type: '180'} }") 180
 			h2
-				a(v-link="{ path='/' }") 240
+				a(v-link="{ path:'espb/', params: { type: '240'} }") 240
 			h2
-				a(v-link="{ path='/' }") 300
+				a(v-link="{ path:'espb/', params: { type: '300'} }") 300
 			h2
-				a(v-link="{ path='/' }") 360
+				a(v-link="{ path:'espb/', params: { type: '360'} }") 360
 
 		.indent.col-xs-6.col-md-4(v-show="showMore")
 			h2.head Akademske
 			hr
 			h2
-				a(v-link="{ path='/studije/umetnost' }") Umetnost
+				a(v-link="{ path:'studije/', params: { type: 'umetnost'} }") Umetnost
 			h2
-				a(v-link="{ path='/studije/tehnicke' }") Tehnicke
+				a(v-link="{ path:'studije/', params: { type: 'tehnicke'} }") Tehnicke
 			h2
-				a(v-link="{ path='/studije/prirodne' }") Prirodne
+				a(v-link="{ path:'studije/', params: { type: 'prirodne'} }") Prirodne
 			h2
-				a(v-link="{ path='/studije/drustvene' }") Drustvene
+				a(v-link="{ path:'studije/', params: { type: 'drustvene'} }") Drustvene
 			h2
-				a(v-link="{ path='/studije/medicinske' }") Medicinske
+				a(v-link="{ path:'studije/', params: { type: 'medicinske'} }") Medicinske
 			//- h2
 				//- a(v-link="{ path='/' }") Vojne
 
@@ -71,6 +71,7 @@ export default {
 
 		a
 			margin-down: 10px
+			color: white
 
 	hr
 		margin: 10px 0
