@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label" for="textinput">Tekst</label>
                                 <div class="col-md-8">
-                                    <textarea name="description" id="description" class="form-control input-md">{{$faq->description}}vzb_database.sql</textarea>
+                                    <textarea name="description" id="description" class="form-control input-md">{{$faq->description}}</textarea>
                                 </div>
                             </div>
 
