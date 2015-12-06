@@ -23,6 +23,7 @@
                             <th>Ime</th>
                             <th>Lokacija</th>
                             <th>Datum/Vreme</th>
+                            <th>Tip</th>
                             <th>Akcija</th>
                         </tr>
                     </thead>
@@ -33,6 +34,7 @@
                             <td>{{$event->name}}</td>
                             <td>{{$event->location}}</td>
                             <td>{{$event->time_date}}</td>
+                            <td>{{$event->type}}</td>
                             <td><a class="btn btn-success" href="{{url('admin/event/')}}/{{$event->id}}">Izmeni</a> <a class="btn btn-danger" href="{{url('admin/event/delete/')}}/{{$event->id}}">Obrisi</a></td>
                         </tr>
                     @endforeach

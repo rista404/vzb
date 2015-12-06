@@ -42,6 +42,13 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-2 control-label" for="textinput">Tip</label>
+                                <div class="col-md-4">
+                                    <input id="type" name="type" type="text" class="form-control input-md" value="{{$event->type}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-2 control-label" for="textinput">Opis</label>
                                 <div class="col-md-8">
                                     <textarea name="description" id="description" class="form-control input-md">{{$event->description}}</textarea>

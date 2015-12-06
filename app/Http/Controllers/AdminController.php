@@ -205,6 +205,7 @@ class AdminController extends Controller {
         $event->time_date = $request->input('time_date');
         $event->location = $request->input('location');
         $event->description = $request->input('description');
+        $event->type = $request->input('type');
 
         $event->save();
 
@@ -225,6 +226,7 @@ class AdminController extends Controller {
         $event->time_date = $request->input('time_date');
         $event->location = $request->input('location');
         $event->description = $request->input('description');
+        $event->type = $request->input('type');
 
         $event->save();
 

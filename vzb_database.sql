@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.19-0ubuntu0.14.04.1)
 # Database: vzb
-# Generation Time: 2015-12-06 09:50:31 +0000
+# Generation Time: 2015-12-06 11:56:06 +0000
 # ************************************************************
 
 
@@ -58,6 +58,7 @@ CREATE TABLE `events` (
   `time_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `location` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `type` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -66,9 +67,9 @@ CREATE TABLE `events` (
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
 
-INSERT INTO `events` (`id`, `user_id`, `name`, `time_date`, `location`, `description`, `created_at`, `updated_at`)
+INSERT INTO `events` (`id`, `user_id`, `name`, `time_date`, `location`, `description`, `type`, `created_at`, `updated_at`)
 VALUES
-	(1,1,'Test123','test','test','<p>Testiranje Eventova</p>\r\n','2015-12-06 09:28:31','2015-12-06 09:30:15');
+	(1,1,'Test123','test','test','<p>Testiranje Eventova</p>\r\n','test','2015-12-06 09:28:31','2015-12-06 11:53:19');
 
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
