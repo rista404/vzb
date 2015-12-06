@@ -60,6 +60,12 @@ class School extends Model {
                 continue;
             }
 
+            //Convert from cyrilic to latin
+            $school->nazivu = self::cyrilicToLatin($school->nazivu);
+            $school->univerzitet = self::cyrilicToLatin($school->univerzitet);
+            $school->adresa = self::cyrilicToLatin($school->adresa);
+            $school->dekan = self::cyrilicToLatin($school->dekan);
+
             $school_from_db = School::where("id", $school->id)->first();
             if($school_from_db != null) {
                 $schools[$key]->bus = $school_from_db->bus;
@@ -76,14 +82,14 @@ class School extends Model {
             foreach ($study_programs as $study_program) {
                 if($study_program->id == $school->id) {
                     $school->study_programs[] = [
-                        'naziv' => $study_program->naziv,
-                        'nivo' => $study_program->nivo,
-                        'trajanje' => $study_program->trajanje,
-                        'polje' => $study_program->polje,
-                        'zvanje' => $study_program->zvanje,
-                        'skolarina' => $study_program->skolarina,
+                        'naziv' => self::cyrilicToLatin($study_program->naziv),
+                        'nivo' => self::cyrilicToLatin($study_program->nivo),
+                        'trajanje' => self::cyrilicToLatin($study_program->trajanje),
+                        'polje' => self::cyrilicToLatin($study_program->polje),
+                        'zvanje' => self::cyrilicToLatin($study_program->zvanje),
+                        'skolarina' => self::cyrilicToLatin($study_program->skolarina)
                     ];
-                    $school->polje = $study_program->polje;
+                    $school->polje = self::cyrilicToLatin($study_program->polje);
 
                     if(!in_array($study_program->trajanje, $school->trajanje)){
                         $school->trajanje[] = $study_program->trajanje;
@@ -103,7 +109,7 @@ class School extends Model {
     }
 
     public static function isInBelgrade($univerzitet, $naziv = "") {
-        if(strpos($univerzitet,'Београд') !== false || ($univerzitet == "" && strpos($naziv,'Београд') !== false)) {
+        if(strpos($univerzitet,'Beograd') !== false || ($univerzitet == "" && strpos($naziv,'Beograd') !== false)) {
             return true;
         }
 
@@ -120,5 +126,10 @@ class School extends Model {
         }
 
         return false;
+    }
+
+    public static function cyrilicToLatin($text) {
+        $t = \Transliterator::create('Serbian-Latin/BGN');
+        return $t->transliterate($text);
     }
 }

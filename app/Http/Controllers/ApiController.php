@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Dorm;
+use App\Event;
+use App\Faq;
 use App\Organization;
 use App\School;
 use GuzzleHttp\Client;
@@ -29,19 +31,19 @@ class ApiController extends Controller {
             $tip = "";
             switch($type) {
                 case 'umetnost':
-                    $tip = "Уметност";
+                    $tip = "Umetnost";
                     break;
                 case 'tehnicke':
-                    $tip = "Техничко-технолошке науке";
+                    $tip = "Tehničko-tehnološke nauke";
                     break;
                 case 'prirodne':
-                    $tip = "Природно-математичке науке";
+                    $tip = "Prirodno-matematičke nauke";
                     break;
                 case 'drustvene':
-                    $tip = "Друштвено-хуманистичке науке";
+                    $tip = "Društveno-humanističke nauke";
                     break;
                 case 'medicinske':
-                    $tip = "Медицинске науке";
+                    $tip = "Medicinske nauke";
                     break;
             }
 
@@ -50,7 +52,7 @@ class ApiController extends Controller {
             }
 
             foreach($schools as $key => $school) {
-                if($type = "drustvene" && $school->id = '9') {
+                if($type == "drustvene" && $school->id == '9') {
                     continue;
                 }
 
@@ -94,14 +96,38 @@ class ApiController extends Controller {
     }
 
     public function getOrganizations() {
-        $dorms = Organization::all();
+        $organizations = Organization::all();
 
-        return $dorms;
+        return $organizations;
     }
 
     public function getOrganization($id) {
-        $dorm = Organization::find($id);
+        $organization = Organization::find($id);
 
-        return $dorm;
+        return $organization;
+    }
+
+    public function getEvents() {
+        $events = Event::all();
+
+        return $events;
+    }
+
+    public function getEvent($id) {
+        $event = Event::find($id);
+
+        return $event;
+    }
+
+    public function getFaqs() {
+        $faqs = Faq::all();
+
+        return $faqs;
+    }
+
+    public function getFaq($id) {
+        $faq = Faq::find($id);
+
+        return $faq;
     }
 }

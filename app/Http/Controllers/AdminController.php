@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Dorm;
+use App\Event;
+use App\Faq;
 use App\Organization;
 use App\Photo;
 use App\School;
@@ -10,6 +12,7 @@ use Validator;
 use Redirect;
 use Session;
 use File;
+use Auth;
 
 class AdminController extends Controller {
 
@@ -24,6 +27,7 @@ class AdminController extends Controller {
         return redirect("admin/schools");
     }
 
+    //School Functions
     public function getSchools() {
         $schools = School::all();
 
@@ -75,6 +79,7 @@ class AdminController extends Controller {
         return redirect(url('admin/school/'.$photo->school_id))->with('success', 'Slika je obrisana');;
     }
 
+    // Dorms functions
     public function getDorms() {
         $dorms = Dorm::all();
 
@@ -125,6 +130,7 @@ class AdminController extends Controller {
         return redirect("admin/dorms")->with("success", "Dom je obrisan.");
     }
 
+    // Organizations functions
     public function getOrganizations() {
         $organizations = Organization::all();
 
@@ -148,7 +154,7 @@ class AdminController extends Controller {
 
         $organization->save();
 
-        return redirect(url("admin/organization/".$organization->id))->with("success", "Organizacija je izmenjen.");
+        return redirect(url("admin/organization/".$organization->id))->with("success", "Organizacija je izmenjena.");
     }
 
     public function addOrganization() {
@@ -173,5 +179,115 @@ class AdminController extends Controller {
         $organization->delete();
 
         return redirect("admin/organizations")->with("success", "Organizacija je obrisana.");
+    }
+
+    // Events functions
+    public function getEvents() {
+        $events = Event::all();
+
+        return view("admin/events")
+            ->with("events", $events);
+    }
+
+    public function getEvent($id) {
+        $event = Event::find($id);
+
+        return view("admin/edit_event")
+            ->with("event", $event);
+    }
+
+    public function editEvent($id, Request $request) {
+        $event = Event::find($id);
+
+        $user = Auth::user();
+
+        $event->name = $request->input('name');
+        $event->user_id = $user->id;
+        $event->time_date = $request->input('time_date');
+        $event->location = $request->input('location');
+        $event->description = $request->input('description');
+        $event->type = $request->input('type');
+
+        $event->save();
+
+        return redirect(url("admin/event/".$event->id))->with("success", "Dogadjaj je izmenjen.");
+    }
+
+    public function addEvent() {
+        return view("admin/add_event");
+    }
+
+    public function saveEvent(Request $request) {
+        $event = new Event;
+
+        $user = Auth::user();
+
+        $event->name = $request->input('name');
+        $event->user_id = $user->id;
+        $event->time_date = $request->input('time_date');
+        $event->location = $request->input('location');
+        $event->description = $request->input('description');
+        $event->type = $request->input('type');
+
+        $event->save();
+
+        return redirect("admin/events")->with("success", "Dogadjaj je sacuvan.");
+    }
+
+    public function deleteEvent($id) {
+        $event = Event::find($id);
+
+        $event->delete();
+
+        return redirect("admin/events")->with("success", "Dogadjaj je obrisan.");
+    }
+
+    // Faq functions
+    public function getFaqs() {
+        $faqs = Faq::all();
+
+        return view("admin/faqs")
+            ->with("faqs", $faqs);
+    }
+
+    public function getFaq($id) {
+        $faq = Faq::find($id);
+
+        return view("admin/edit_faq")
+            ->with("faq", $faq);
+    }
+
+    public function editFaq($id, Request $request) {
+        $faq = Faq::find($id);
+
+        $faq->title = $request->input('title');
+        $faq->description = $request->input('description');
+
+        $faq->save();
+
+        return redirect(url("admin/faq/".$faq->id))->with("success", "Pitanje je izmenjeno.");
+    }
+
+    public function addFaq() {
+        return view("admin/add_faq");
+    }
+
+    public function saveFaq(Request $request) {
+        $faq = new Faq;
+
+        $faq->title = $request->input('title');
+        $faq->description = $request->input('description');
+
+        $faq->save();
+
+        return redirect("admin/faqs")->with("success", "Pitanje je sacuvano.");
+    }
+
+    public function deleteFaq($id) {
+        $faq = Faq::find($id);
+
+        $faq->delete();
+
+        return redirect("admin/faqs")->with("success", "Pitanje je obrisano.");
     }
 }
