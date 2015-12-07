@@ -1,6 +1,9 @@
 # vzb
 Vodic za brucose :book:
 
+This project is build in 48h, on Open Data Hakaton from 4. to 6. decembar in Belgrade, Serbia.
+There are some known issues, but we hope we will fix those soon. Keep in mind that the hole front-end is built in 2 hours. :smile:
+
 # To build
 
 Create new database
