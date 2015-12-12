@@ -17,7 +17,7 @@ export default {
 
 			var points = transition.to.params.number;
 
-			var url = "http://localhost:8000/api/v1/schools/espb/" + points;
+			var url = "http://brucos.etl.yt/api/v1/schools/espb/" + points;
 
 			console.log(url);
 

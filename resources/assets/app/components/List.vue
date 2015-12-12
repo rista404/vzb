@@ -2,7 +2,7 @@
 	
 .List.fadeInDown
 	a(href="#!/fakulteti")
-		img(src="/public/img/left.png")
+		img(src="/img/left.png")
 	h1.heading {{ $route.params.type }}
 	hr
 	.Single.col-md-6(v-for="single in list")

@@ -2,11 +2,11 @@
 	
 .Fakultet.fadeInDown
 	a(href="#!/fakulteti")
-		img(src="/public/img/left.png")
+		img(src="/img/left.png")
 	h1.heading {{ res.nazivu }}
 
 	a(href="#!/fakulteti").close
-		img(src="/public/img/close.png")
+		img(src="/img/close.png")
 	hr
 	.row
 		.Tab.col-xs-3
@@ -53,7 +53,7 @@ export default {
 
 			var id = transition.to.params.id;
 
-			var url = "http://localhost:8000/api/v1/schools/" + id;
+			var url = "http://brucos.etl.yt/api/v1/schools/" + id;
 
 			console.log(url);
 

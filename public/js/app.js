@@ -13149,7 +13149,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List fadeInDown\"><a href=\"#!/fakulteti\"><img src=\"/public/img/left.png\"/></a><h1 class=\"heading\">{{ $route.params.type }}</h1><hr/><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-10\"><h1> <a href=\"#!/fakultet/{{single.id}}\">{{ single.nazivu }}</a></h1><h3> \n{{ single.adresa }}</h3></div><div class=\"Single__Go col-xs-1\"><img src=\"/public/img/right.png\"/></div></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List fadeInDown\"><a href=\"#!/fakulteti\"><img src=\"/img/left.png\"/></a><h1 class=\"heading\">{{ $route.params.type }}</h1><hr/><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-10\"><h1> <a href=\"#!/fakultet/{{single.id}}\">{{ single.nazivu }}</a></h1><h3> \n{{ single.adresa }}</h3></div><div class=\"Single__Go col-xs-1\"><img src=\"/img/right.png\"/></div></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13207,7 +13207,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Side_Menu\"><div class=\"Side_Menu__Logo\"><a v-link=\"{ path: '/' }\" class=\"Side_Menu__Title\">Vodic <span>za </span><br/>brucose</a><div class=\"Side_Menu__Search\"><img src=\"public/img/loop.png\"/></div></div><ul class=\"Side_Menu__Items\"><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/fakulteti' }\">Fakulteti</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/domovi' }\">Domovi</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/menze' }\">Menze</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/zanimljivosti' }\">Zanimljivosti</a></h3></li></ul></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Side_Menu\"><div class=\"Side_Menu__Logo\"><a v-link=\"{ path: '/' }\" class=\"Side_Menu__Title\">Vodic <span>za </span><br/>brucose</a><div class=\"Side_Menu__Search\"><img src=\"img/loop.png\"/></div></div><ul class=\"Side_Menu__Items\"><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/fakulteti' }\">Fakulteti</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/domovi' }\">Domovi</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/menze' }\">Menze</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/zanimljivosti' }\">Zanimljivosti</a></h3></li></ul></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13435,7 +13435,7 @@ exports.default = {
 
 			var points = transition.to.params.number;
 
-			var url = "http://localhost:8000/api/v1/schools/espb/" + points;
+			var url = "http://brucos.etl.yt/api/v1/schools/espb/" + points;
 
 			console.log(url);
 
@@ -13490,7 +13490,7 @@ exports.default = {
 
 			var id = transition.to.params.id;
 
-			var url = "http://localhost:8000/api/v1/schools/" + id;
+			var url = "http://brucos.etl.yt/api/v1/schools/" + id;
 
 			console.log(url);
 
@@ -13530,7 +13530,7 @@ exports.default = {
 
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Fakultet fadeInDown\"><a href=\"#!/fakulteti\"><img src=\"/public/img/left.png\"/></a><h1 class=\"heading\">{{ res.nazivu }}</h1><a href=\"#!/fakulteti\" class=\"close\"><img src=\"/public/img/close.png\"/></a><hr/><div class=\"row\"><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 1\" v-bind:class=\"{ 'active':  currentTab == 1}\">SMEROVI</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 2\" v-bind:class=\"{ 'active':  currentTab == 2}\">LOKACIJA</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 3\" v-bind:class=\"{ 'active':  currentTab == 3}\">KONTAKT</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 4\" v-bind:class=\"{ 'active':  currentTab == 4}\">GALERIJA</h2></div></div><div class=\"Info row\"><div v-show=\"currentTab == 1\" class=\"Smerovi col-sm-12 fadeInDown\"><list :list=\"res.study_programs\"></list></div><div v-show=\"currentTab == 2\" class=\"col-sm-12 fadeInDown\"><div class=\"row\"><div class=\"col-xs-12\"><div id=\"map\"><h1>To be done!</h1></div></div></div></div><div v-show=\"currentTab == 3\" class=\"Kontakt col-sm-12 fadeInDown\"><div class=\"row\"><div class=\"col-xs-12\"><h2>Email: {{ res.email }}</h2><h2>Broj Telefona: {{ res.tel }}</h2><h2>Website: <a href=\"{{ res.www }}\">{{ res.www }}</a></h2></div></div></div><div v-show=\"currentTab == 4\" class=\"col-sm-12 fadeInDown\"><h1>To be done!</h1></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Fakultet fadeInDown\"><a href=\"#!/fakulteti\"><img src=\"/img/left.png\"/></a><h1 class=\"heading\">{{ res.nazivu }}</h1><a href=\"#!/fakulteti\" class=\"close\"><img src=\"/public/img/close.png\"/></a><hr/><div class=\"row\"><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 1\" v-bind:class=\"{ 'active':  currentTab == 1}\">SMEROVI</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 2\" v-bind:class=\"{ 'active':  currentTab == 2}\">LOKACIJA</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 3\" v-bind:class=\"{ 'active':  currentTab == 3}\">KONTAKT</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 4\" v-bind:class=\"{ 'active':  currentTab == 4}\">GALERIJA</h2></div></div><div class=\"Info row\"><div v-show=\"currentTab == 1\" class=\"Smerovi col-sm-12 fadeInDown\"><list :list=\"res.study_programs\"></list></div><div v-show=\"currentTab == 2\" class=\"col-sm-12 fadeInDown\"><div class=\"row\"><div class=\"col-xs-12\"><div id=\"map\"><h1>To be done!</h1></div></div></div></div><div v-show=\"currentTab == 3\" class=\"Kontakt col-sm-12 fadeInDown\"><div class=\"row\"><div class=\"col-xs-12\"><h2>Email: {{ res.email }}</h2><h2>Broj Telefona: {{ res.tel }}</h2><h2>Website: <a href=\"{{ res.www }}\">{{ res.www }}</a></h2></div></div></div><div v-show=\"currentTab == 4\" class=\"col-sm-12 fadeInDown\"><h1>To be done!</h1></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13634,7 +13634,7 @@ exports.default = {
 
 			var type = transition.to.params.type;
 
-			var url = "http://localhost:8000/api/v1/schools/type/" + type;
+			var url = "http://brucos.etl.yt/api/v1/schools/type/" + type;
 
 			this.$http.get(url, function (res, status, request) {
 
