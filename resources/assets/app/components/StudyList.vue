@@ -1,19 +1,15 @@
 <template lang="jade">
 	
-.List.fadeInDown
-	a(href="#!/fakulteti")
-		img(src="/public/img/left.png")
-	h1.heading {{ $route.params.type }}
-	hr
+.List-Study
 	.Single.col-md-6(v-for="single in list")
 		.row
-			.Single__Content.col-xs-10
+			.Single__Content.col-xs-9
 				h1 
-					a(href="#!/fakultet/{{single.id}}") {{ single.nazivu }}
+					a {{ single.naziv }}
 				h3 
-					{{ single.adresa }}
-			.Single__Go.col-xs-1
-				img(src="/img/right.png")
+					| {{ single.nivo }}, {{ single.trajanje }} ESPB
+			.Single__Go.col-xs-3
+				h3 {{ single.skolarina }} RSD
 
 </template>
 
@@ -35,7 +31,7 @@ export default {
 
 <style lang="sass">
 
-.List
+.List-Study
 
 	.heading
 		display: inline-block
@@ -44,11 +40,11 @@ export default {
 		vertical-align: middle
 
 	.Single
-		padding-bottom: 50px
-		height: 180px
+		padding-bottom: 30px
+		height: 140px
 
 		&:hover
-			h1 a, h3
+			h1 a
 				color: #fdff56
 
 		h1
@@ -64,7 +60,12 @@ export default {
 			font-size: 18px
 
 		.Single__Go
-			margin-top: 55px
+			margin-top: 25px
+			text-align: center
+
+			h3
+				color: #fdff56
+				font-size: 20px
 
 
 </style>

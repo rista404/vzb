@@ -1,6 +1,6 @@
 <template lang="jade">
 	
-.Filter_Fakulteta
+.Filter_Fakulteta.fadeInDown
 	h2 Pronadji fakultet:
 	hr
 	.row

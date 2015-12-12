@@ -13081,7 +13081,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta\"><h2>Pronadji fakultet:</h2><hr/><div class=\"row\"><div class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"'studije/strukovne'\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"'/espb/180'\">180</a></h2><h2><a v-link=\"'/espb/240'\">240</a></h2><h2><a v-link=\"'/espb/300'\">300</a></h2><h2><a v-link=\"'/espb/360'\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"'studije/umetnost'\">Umetnost</a></h2><h2><a v-link=\"'studije/tehnicke'\">Tehnicke</a></h2><h2><a v-link=\"'studije/prirodne'\">Prirodne</a></h2><h2><a v-link=\"'studije/drustvene'\">Drustvene</a></h2><h2><a v-link=\"'studije/medicinske'\">Medicinske</a></h2></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Filter_Fakulteta fadeInDown\"><h2>Pronadji fakultet:</h2><hr/><div class=\"row\"><div class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Studije</h2><hr/><h2><a v-link=\"'studije/strukovne'\">Strukovne</a></h2><h2><a @click=\"showMore = ! showMore\" class=\"clickable\">Akademske</a></h2><h2 class=\"head\">ESPB</h2><hr/><h2><a v-link=\"'/espb/180'\">180</a></h2><h2><a v-link=\"'/espb/240'\">240</a></h2><h2><a v-link=\"'/espb/300'\">300</a></h2><h2><a v-link=\"'/espb/360'\">360</a></h2></div><div v-show=\"showMore\" class=\"indent col-xs-6 col-md-4\"><h2 class=\"head\">Akademske</h2><hr/><h2><a v-link=\"'studije/umetnost'\">Umetnost</a></h2><h2><a v-link=\"'studije/tehnicke'\">Tehnicke</a></h2><h2><a v-link=\"'studije/prirodne'\">Prirodne</a></h2><h2><a v-link=\"'studije/drustvene'\">Drustvene</a></h2><h2><a v-link=\"'studije/medicinske'\">Medicinske</a></h2></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13117,7 +13117,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Landing\"><h1>Greeting message</h1><tips></tips></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Landing\"><h1>To be done!!!</h1><h1>Pozdrav za ceo hakaton!</h1></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -13133,8 +13133,8 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"./Tips.vue":19,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],16:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n")
+},{"./Tips.vue":20,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],16:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".List .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n")
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13149,14 +13149,14 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List\"><h1 class=\"heading\">{{ $route.params.type }}</h1><hr/><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-10\"><h1> <a href=\"#!/fakultet/{{single.id}}\">{{ single.nazivu }}</a></h1><h3> \n{{ single.adresa }}</h3></div><div class=\"Single__Go col-xs-1\"><img src=\"/img/right.png\"/></div></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List fadeInDown\"><a href=\"#!/fakulteti\"><img src=\"/public/img/left.png\"/></a><h1 class=\"heading\">{{ $route.params.type }}</h1><hr/><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-10\"><h1> <a href=\"#!/fakultet/{{single.id}}\">{{ single.nazivu }}</a></h1><h3> \n{{ single.adresa }}</h3></div><div class=\"Single__Go col-xs-1\"><img src=\"/public/img/right.png\"/></div></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/components/List.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n"] = false
+    require("vueify-insert-css").cache[".List .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.List .Single {\n  padding-bottom: 50px;\n  height: 180px; }\n  .List .Single:hover h1 a, .List .Single:hover h3 {\n    color: #fdff56; }\n  .List .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List .Single h1 a {\n      color: white; }\n  .List .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List .Single .Single__Go {\n    margin-top: 55px; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -13195,7 +13195,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],18:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".Side_Menu {\n  padding: 70px 0 40px 0;\n  text-align: center; }\n  @media screen and (min-width: 768px) {\n    .Side_Menu {\n      padding: 70px 0;\n      padding-right: 15px;\n      text-align: right; } }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Title {\n    display: inline-block;\n    vertical-align: middle;\n    text-transform: uppercase;\n    padding-right: 15px;\n    font-size: 22px;\n    line-height: 1;\n    font-weight: 500;\n    letter-spacing: 1px;\n    color: #333; }\n    .Side_Menu .Side_Menu__Logo .Side_Menu__Title:hover {\n      color: #fdff56; }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Search {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer; }\n  .Side_Menu .Side_Menu__Items {\n    padding: 40px 0; }\n    .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n      display: inline-block;\n      padding: 0 10px; }\n      @media screen and (min-width: 768px) {\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n          padding-bottom: 25px;\n          display: inline; } }\n      .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 {\n        font-size: 22px;\n        font-weight: 400; }\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a {\n          color: #333; }\n          .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a.active {\n            color: #fdff56; }\n")
+var __vueify_style__ = require("vueify-insert-css").insert(".Side_Menu {\n  padding: 70px 0 40px 0;\n  text-align: center; }\n  @media screen and (min-width: 768px) {\n    .Side_Menu {\n      padding: 70px 0;\n      padding-right: 15px;\n      text-align: right; } }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Title {\n    display: inline-block;\n    vertical-align: middle;\n    text-transform: uppercase;\n    padding-right: 15px;\n    font-size: 22px;\n    line-height: 1;\n    font-weight: 500;\n    letter-spacing: 1px;\n    color: #333; }\n    .Side_Menu .Side_Menu__Logo .Side_Menu__Title:hover {\n      color: #fdff56; }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Search {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer; }\n  .Side_Menu .Side_Menu__Items {\n    padding: 20px 0; }\n    @media screen and (min-width: 768px) {\n      .Side_Menu .Side_Menu__Items {\n        padding: 40px 0; } }\n    .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n      padding: 0 40px; }\n      @media screen and (min-width: 768px) {\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n          padding-bottom: 25px;\n          display: inline; } }\n      .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 {\n        font-size: 22px;\n        font-weight: 400; }\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a {\n          color: #333; }\n          .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a.active {\n            color: #fdff56; }\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13207,14 +13207,14 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Side_Menu\"><div class=\"Side_Menu__Logo\"><a v-link=\"{ path: '/' }\" class=\"Side_Menu__Title\">Vodic <span>za </span><br/>brucose</a><div class=\"Side_Menu__Search\"><img src=\"img/loop.png\"/></div></div><ul class=\"Side_Menu__Items\"><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/fakulteti' }\">Fakulteti</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/domovi' }\">Domovi</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/menze' }\">Menze</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/zanimljivosti' }\">Zanimljivosti</a></h3></li></ul></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Side_Menu\"><div class=\"Side_Menu__Logo\"><a v-link=\"{ path: '/' }\" class=\"Side_Menu__Title\">Vodic <span>za </span><br/>brucose</a><div class=\"Side_Menu__Search\"><img src=\"public/img/loop.png\"/></div></div><ul class=\"Side_Menu__Items\"><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/fakulteti' }\">Fakulteti</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/domovi' }\">Domovi</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/menze' }\">Menze</a></h3></li><li class=\"Side_Menu__Item\"><h3> <a v-link=\"{ path: '/zanimljivosti' }\">Zanimljivosti</a></h3></li></ul></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/components/Side_Menu.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".Side_Menu {\n  padding: 70px 0 40px 0;\n  text-align: center; }\n  @media screen and (min-width: 768px) {\n    .Side_Menu {\n      padding: 70px 0;\n      padding-right: 15px;\n      text-align: right; } }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Title {\n    display: inline-block;\n    vertical-align: middle;\n    text-transform: uppercase;\n    padding-right: 15px;\n    font-size: 22px;\n    line-height: 1;\n    font-weight: 500;\n    letter-spacing: 1px;\n    color: #333; }\n    .Side_Menu .Side_Menu__Logo .Side_Menu__Title:hover {\n      color: #fdff56; }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Search {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer; }\n  .Side_Menu .Side_Menu__Items {\n    padding: 40px 0; }\n    .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n      display: inline-block;\n      padding: 0 10px; }\n      @media screen and (min-width: 768px) {\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n          padding-bottom: 25px;\n          display: inline; } }\n      .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 {\n        font-size: 22px;\n        font-weight: 400; }\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a {\n          color: #333; }\n          .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a.active {\n            color: #fdff56; }\n"] = false
+    require("vueify-insert-css").cache[".Side_Menu {\n  padding: 70px 0 40px 0;\n  text-align: center; }\n  @media screen and (min-width: 768px) {\n    .Side_Menu {\n      padding: 70px 0;\n      padding-right: 15px;\n      text-align: right; } }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Title {\n    display: inline-block;\n    vertical-align: middle;\n    text-transform: uppercase;\n    padding-right: 15px;\n    font-size: 22px;\n    line-height: 1;\n    font-weight: 500;\n    letter-spacing: 1px;\n    color: #333; }\n    .Side_Menu .Side_Menu__Logo .Side_Menu__Title:hover {\n      color: #fdff56; }\n  .Side_Menu .Side_Menu__Logo .Side_Menu__Search {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer; }\n  .Side_Menu .Side_Menu__Items {\n    padding: 20px 0; }\n    @media screen and (min-width: 768px) {\n      .Side_Menu .Side_Menu__Items {\n        padding: 40px 0; } }\n    .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n      padding: 0 40px; }\n      @media screen and (min-width: 768px) {\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item {\n          padding-bottom: 25px;\n          display: inline; } }\n      .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 {\n        font-size: 22px;\n        font-weight: 400; }\n        .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a {\n          color: #333; }\n          .Side_Menu .Side_Menu__Items .Side_Menu__Item h3 a.active {\n            color: #fdff56; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -13224,6 +13224,38 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],19:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".List-Study .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.List-Study .Single {\n  padding-bottom: 30px;\n  height: 140px; }\n  .List-Study .Single:hover h1 a {\n    color: #fdff56; }\n  .List-Study .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List-Study .Single h1 a {\n      color: white; }\n  .List-Study .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List-Study .Single .Single__Go {\n    margin-top: 25px;\n    text-align: center; }\n    .List-Study .Single .Single__Go h3 {\n      color: #fdff56;\n      font-size: 20px; }\n")
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+
+	props: ['list'],
+
+	data: function data() {
+		return;
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"List-Study\"><div v-for=\"single in list\" class=\"Single col-md-6\"><div class=\"row\"><div class=\"Single__Content col-xs-9\"><h1> <a>{{ single.naziv }}</a></h1><h3> \n{{ single.nivo }}, {{ single.trajanje }} ESPB</h3></div><div class=\"Single__Go col-xs-3\"><h3>{{ single.skolarina }} RSD</h3></div></div></div></div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/rista/Projects/vzb/resources/assets/app/components/StudyList.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".List-Study .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  vertical-align: middle; }\n\n.List-Study .Single {\n  padding-bottom: 30px;\n  height: 140px; }\n  .List-Study .Single:hover h1 a {\n    color: #fdff56; }\n  .List-Study .Single h1 {\n    font-size: 22px;\n    font-weight: 500; }\n    .List-Study .Single h1 a {\n      color: white; }\n  .List-Study .Single h3 {\n    color: #21c3eb;\n    font-weight: 300;\n    font-size: 18px; }\n  .List-Study .Single .Single__Go {\n    margin-top: 25px;\n    text-align: center; }\n    .List-Study .Single .Single__Go h3 {\n      color: #fdff56;\n      font-size: 20px; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],20:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13247,7 +13279,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}],20:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2}],21:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert(".Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n  display: inline-block;\n  padding-right: 20px; }\n  @media screen and (min-width: 768px) {\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item {\n      padding-right: 35px; } }\n  .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 {\n    line-height: 80px;\n    font-weight: 400;\n    font-size: 20px; }\n    .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a, .Top-Bar .Top-Bar__Nav .Top-Bar__Nav_Item h3 a:hover {\n      color: #333; }\n")
 'use strict';
 
@@ -13288,7 +13320,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"./Profile.vue":17,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],21:[function(require,module,exports){
+},{"./Profile.vue":17,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],22:[function(require,module,exports){
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 
@@ -13352,14 +13384,14 @@ var App = Vue.extend({});
 // Fire up the router
 router.start(App, '#app');
 
-},{"../components/Filter_Fakulteta.vue":14,"../components/Landing.vue":15,"../views/Domovi.vue":23,"../views/Espb.vue":24,"../views/Fakultet.vue":25,"../views/Home_View.vue":26,"../views/Menze.vue":27,"../views/Studije.vue":28,"../views/Zanimljivosti.vue":29,"vue":12,"vue-router":11}],22:[function(require,module,exports){
+},{"../components/Filter_Fakulteta.vue":14,"../components/Landing.vue":15,"../views/Domovi.vue":24,"../views/Espb.vue":25,"../views/Fakultet.vue":26,"../views/Home_View.vue":27,"../views/Menze.vue":28,"../views/Studije.vue":29,"../views/Zanimljivosti.vue":30,"vue":12,"vue-router":11}],23:[function(require,module,exports){
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
 Vue.use(VueResource);
 
 var Router = require('./lib/router.js');
-},{"./lib/router.js":21,"vue":12,"vue-resource":4,"vue-router":11}],23:[function(require,module,exports){
+},{"./lib/router.js":22,"vue":12,"vue-resource":4,"vue-router":11}],24:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13383,7 +13415,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}],24:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2}],25:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13403,7 +13435,7 @@ exports.default = {
 
 			var points = transition.to.params.number;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/espb/" + points;
+			var url = "http://localhost:8000/api/v1/schools/espb/" + points;
 
 			console.log(url);
 
@@ -13437,12 +13469,20 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2}],25:[function(require,module,exports){
+},{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2}],26:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Fakultet .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  font-size: 24px;\n  vertical-align: middle; }\n\n.Fakultet .close {\n  float: right; }\n\n.Fakultet #map {\n  width: 100%;\n  height: 400px; }\n\n.Fakultet .Tab {\n  text-align: center; }\n  .Fakultet .Tab h2 {\n    color: white;\n    font-weight: 400;\n    font-size: 20px;\n    cursor: pointer; }\n    .Fakultet .Tab h2.active {\n      color: #fdff56; }\n\n.Fakultet .Kontakt h2 {\n  color: white;\n  padding: 20px 0;\n  font-weight: 200; }\n  .Fakultet .Kontakt h2 a, .Fakultet .Kontakt h2 a:hover {\n    color: #fdff56; }\n\n.Fakultet .Info {\n  padding-top: 40px; }\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+
+var _StudyList = require("../components/StudyList.vue");
+
+var _StudyList2 = _interopRequireDefault(_StudyList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
 
 	route: {
@@ -13450,7 +13490,7 @@ exports.default = {
 
 			var id = transition.to.params.id;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/" + id;
+			var url = "http://localhost:8000/api/v1/schools/" + id;
 
 			console.log(url);
 
@@ -13461,27 +13501,53 @@ exports.default = {
 		}
 	},
 
+	activate: function activate(done) {
+
+		this.$http.get("https://maps.googleapis.com/maps/api/js?key=AIzaSyDcbw2QedscN39nlh_-EQbGf-FqrO3EUg4&callback=initMap", function (res, status, request) {
+
+			console.log(res);
+		});
+
+		function initMap() {
+			// Create a map object and specify the DOM element for display.
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: { lat: -34.397, lng: 150.644 },
+				scrollwheel: false,
+				zoom: 8
+			});
+		}
+	},
 	data: function data() {
 		return {
-			res: {}
+			res: {},
+			currentTab: 1
 		};
+	},
+
+	components: {
+		list: _StudyList2.default
 	}
+
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Fakultet\"><img src=\"/img/left.png\"/><h1 class=\"heading\">Fakultet</h1><hr/></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Fakultet fadeInDown\"><a href=\"#!/fakulteti\"><img src=\"/public/img/left.png\"/></a><h1 class=\"heading\">{{ res.nazivu }}</h1><a href=\"#!/fakulteti\" class=\"close\"><img src=\"/public/img/close.png\"/></a><hr/><div class=\"row\"><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 1\" v-bind:class=\"{ 'active':  currentTab == 1}\">SMEROVI</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 2\" v-bind:class=\"{ 'active':  currentTab == 2}\">LOKACIJA</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 3\" v-bind:class=\"{ 'active':  currentTab == 3}\">KONTAKT</h2></div><div class=\"Tab col-xs-3\"><h2 @click=\"currentTab = 4\" v-bind:class=\"{ 'active':  currentTab == 4}\">GALERIJA</h2></div></div><div class=\"Info row\"><div v-show=\"currentTab == 1\" class=\"Smerovi col-sm-12 fadeInDown\"><list :list=\"res.study_programs\"></list></div><div v-show=\"currentTab == 2\" class=\"col-sm-12 fadeInDown\"><div class=\"row\"><div class=\"col-xs-12\"><div id=\"map\"><h1>To be done!</h1></div></div></div></div><div v-show=\"currentTab == 3\" class=\"Kontakt col-sm-12 fadeInDown\"><div class=\"row\"><div class=\"col-xs-12\"><h2>Email: {{ res.email }}</h2><h2>Broj Telefona: {{ res.tel }}</h2><h2>Website: <a href=\"{{ res.www }}\">{{ res.www }}</a></h2></div></div></div><div v-show=\"currentTab == 4\" class=\"col-sm-12 fadeInDown\"><h1>To be done!</h1></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Fakultet.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache[".Fakultet .heading {\n  display: inline-block;\n  color: #fdff56;\n  margin: 0 0 0 20px;\n  font-size: 24px;\n  vertical-align: middle; }\n\n.Fakultet .close {\n  float: right; }\n\n.Fakultet #map {\n  width: 100%;\n  height: 400px; }\n\n.Fakultet .Tab {\n  text-align: center; }\n  .Fakultet .Tab h2 {\n    color: white;\n    font-weight: 400;\n    font-size: 20px;\n    cursor: pointer; }\n    .Fakultet .Tab h2.active {\n      color: #fdff56; }\n\n.Fakultet .Kontakt h2 {\n  color: white;\n  padding: 20px 0;\n  font-weight: 200; }\n  .Fakultet .Kontakt h2 a, .Fakultet .Kontakt h2 a:hover {\n    color: #fdff56; }\n\n.Fakultet .Info {\n  padding-top: 40px; }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}],26:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert(".Home_View {\n  height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .Side_Menu_Holder {\n    width: 100%; }\n  .Home_View .View_Frame__holder {\n    width: 100%;\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  @media screen and (min-width: 768px) {\n    .Home_View .Side_Menu_Holder {\n      width: 30%;\n      float: left; }\n    .Home_View .View_Frame__holder {\n      width: 70%;\n      float: left; } }\n  .Home_View .View_Frame {\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n  .Home_View h1 {\n    color: white;\n    font-weight: 300; }\n")
+},{"../components/StudyList.vue":19,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],27:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert(".Home_View {\n  height: 100%;\n  max-height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .Side_Menu_Holder {\n    width: 100%; }\n  .Home_View .View_Frame__holder {\n    width: 100%;\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  @media screen and (min-width: 768px) {\n    .Home_View .Side_Menu_Holder {\n      width: 30%;\n      float: left; }\n    .Home_View .View_Frame__holder {\n      width: 70%;\n      float: left; } }\n  .Home_View .View_Frame {\n    overflow-y: auto;\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n  .Home_View h1 {\n    color: white;\n    font-weight: 300; }\n")
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13507,14 +13573,14 @@ exports.default = {
 
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View\"><div class=\"Landing_Section\"><div class=\"Side_Menu_Holder\"><side-menu></side-menu></div><div class=\"View_Frame__holder\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div class=\"Home_View fadeInDown\"><div class=\"Landing_Section\"><div class=\"Side_Menu_Holder\"><side-menu></side-menu></div><div class=\"View_Frame__holder\"><div class=\"View_Frame\"><router-view></router-view></div></div></div></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/rista/Projects/vzb/resources/assets/app/views/Home_View.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache[".Home_View {\n  height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .Side_Menu_Holder {\n    width: 100%; }\n  .Home_View .View_Frame__holder {\n    width: 100%;\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  @media screen and (min-width: 768px) {\n    .Home_View .Side_Menu_Holder {\n      width: 30%;\n      float: left; }\n    .Home_View .View_Frame__holder {\n      width: 70%;\n      float: left; } }\n  .Home_View .View_Frame {\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n  .Home_View h1 {\n    color: white;\n    font-weight: 300; }\n"] = false
+    require("vueify-insert-css").cache[".Home_View {\n  height: 100%;\n  max-height: 100%; }\n  .Home_View .Landing_Section {\n    position: relative;\n    height: 100%;\n    background-color: #21c3eb; }\n    .Home_View .Landing_Section > .container {\n      height: 100%; }\n      .Home_View .Landing_Section > .container > .row {\n        height: 100%; }\n  .Home_View .Side_Menu_Holder {\n    width: 100%; }\n  .Home_View .View_Frame__holder {\n    width: 100%;\n    padding-left: 0;\n    padding-right: 0;\n    height: 100%; }\n  @media screen and (min-width: 768px) {\n    .Home_View .Side_Menu_Holder {\n      width: 30%;\n      float: left; }\n    .Home_View .View_Frame__holder {\n      width: 70%;\n      float: left; } }\n  .Home_View .View_Frame {\n    overflow-y: auto;\n    height: 100%;\n    min-height: 650px;\n    padding: 70px 40px;\n    background-color: #31363c; }\n  .Home_View h1 {\n    color: white;\n    font-weight: 300; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -13523,7 +13589,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../components/Side_Menu.vue":18,"../components/Top_Bar.vue":20,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],27:[function(require,module,exports){
+},{"../components/Side_Menu.vue":18,"../components/Top_Bar.vue":21,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],28:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13547,7 +13613,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}],28:[function(require,module,exports){
+},{"vue":12,"vue-hot-reload-api":2}],29:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("pre {\n  color: white; }\n")
 "use strict";
 
@@ -13568,7 +13634,7 @@ exports.default = {
 
 			var type = transition.to.params.type;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/type/" + type;
+			var url = "http://localhost:8000/api/v1/schools/type/" + type;
 
 			this.$http.get(url, function (res, status, request) {
 
@@ -13605,7 +13671,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],29:[function(require,module,exports){
+},{"../components/List.vue":16,"vue":12,"vue-hot-reload-api":2,"vueify-insert-css":13}],30:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13629,4 +13695,4 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":12,"vue-hot-reload-api":2}]},{},[22]);
+},{"vue":12,"vue-hot-reload-api":2}]},{},[23]);

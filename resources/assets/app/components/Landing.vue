@@ -1,9 +1,9 @@
 <template lang="jade">
 	
 .Landing
-	h1 Greeting message
+	h1 To be done!!!
+	h1 Pozdrav za ceo hakaton!
 
-	tips
 
 </template>
 
