@@ -1,7 +1,7 @@
 <template lang="jade">
 	
 .Fakultet
-	img(src="/public/img/left.png")
+	img(src="/img/left.png")
 	h1.heading Fakultet
 	hr
 

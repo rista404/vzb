@@ -10,7 +10,7 @@
 			|brucose
 
 		.Side_Menu__Search
-			img(src="public/img/loop.png")
+			img(src="img/loop.png")
 
 	ul.Side_Menu__Items
 

@@ -11,7 +11,7 @@
 				h3 
 					{{ single.adresa }}
 			.Single__Go.col-xs-1
-				img(src="/public/img/right.png")
+				img(src="/img/right.png")
 
 </template>
 
