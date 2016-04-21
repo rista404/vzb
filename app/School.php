@@ -48,10 +48,10 @@ class School extends Model {
     private static function storeSchoolsInCache() {
         $client = new Client;
 
-        $res = $client->request("GET", "http://opendata.mpn.gov.rs/1337/get.php?dataset=vsustanove2016&lang=en&term=json");
+        $res = $client->request("GET", "http://opendata.mpn.gov.rs/get.php?dataset=vsustanove2016&lang=sr&term=json");
         $schools = json_decode($res->getBody());
 
-        $res = $client->request("GET", "http://opendata.mpn.gov.rs/1337/get.php?dataset=sprogrami2016&lang=en&term=json");
+        $res = $client->request("GET", "http://opendata.mpn.gov.rs/get.php?dataset=sprogrami2016&lang=sr&term=json");
         $study_programs = json_decode($res->getBody());
 
         foreach ($schools as $key=>$school){

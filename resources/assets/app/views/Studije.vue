@@ -17,7 +17,7 @@ export default {
 
 			var type = transition.to.params.type;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/type/" + type;
+			var url = "/api/v1/schools/type/" + type;
 
 			this.$http.get(url, function (res, status, request) {
 

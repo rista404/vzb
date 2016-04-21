@@ -13435,7 +13435,7 @@ exports.default = {
 
 			var points = transition.to.params.number;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/espb/" + points;
+			var url = "http://vzb.app/api/v1/schools/espb/" + points;
 
 			console.log(url);
 
@@ -13490,7 +13490,7 @@ exports.default = {
 
 			var id = transition.to.params.id;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/" + id;
+			var url = "http://vzb.app/api/v1/schools/" + id;
 
 			console.log(url);
 
@@ -13634,7 +13634,7 @@ exports.default = {
 
 			var type = transition.to.params.type;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/type/" + type;
+			var url = "http://vzb.app/api/v1/schools/type/" + type;
 
 			this.$http.get(url, function (res, status, request) {
 

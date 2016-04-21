@@ -53,7 +53,7 @@ export default {
 
 			var id = transition.to.params.id;
 
-			var url = "http://brucos.etl.yt/api/v1/schools/" + id;
+			var url = "/api/v1/schools/" + id;
 
 			console.log(url);
 
